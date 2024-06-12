@@ -10,7 +10,6 @@ header {
         justify-content: space-between;
         align-items: flex-end;
         padding: 0;
-        width: 80%;
 
         .header__left a img {
             width: 195px;
@@ -108,13 +107,7 @@ header {
 
 
 
-@media screen and (max-width: 1825px) {
-    header .header {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 1280px) {
+@media (max-width: 1200px) {
     header {
         padding: 30px 0px;
 
@@ -139,7 +132,7 @@ header {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 576px) {
     header {
         padding: 20px 0px;
 

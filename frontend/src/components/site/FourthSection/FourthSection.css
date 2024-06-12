@@ -1,0 +1,23 @@
+.fourth__section {
+    background-color: black;
+
+    .slick-track {
+
+        .slick-slide {
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .single__item {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #1d1d1d;
+                    width: 91% !important;
+                }
+            }
+        }
+    }
+}
