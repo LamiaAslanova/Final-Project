@@ -1,88 +1,75 @@
 import React from 'react'
-import './FourthSection.css'
+import './FifthSection.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import Photo1 from '../../../assets/images/Photo4-1.png'
+import Photo1 from '../../../assets/images/Photo5-1.jpg'
 
-const FourthSection = () => {
-
+const FifthSection = () => {
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 0,
         responsive: [
-            // {
+            //   {
             //     breakpoint: 1024,
             //     settings: {
-            //         slidesToShow: 3,
-            //         slidesToScroll: 3,
-            //         infinite: true,
-            //         dots: true
+            //       slidesToShow: 3,
+            //       slidesToScroll: 3,
+            //       infinite: true,
+            //       dots: true
             //     }
-            // },
-            {
-                breakpoint: 993,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 2,
-                    infinite: false,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1,
-                    infinite: false,
-                    dots: true
-                }
-            },
-            // {
+            //   },
+            //   {
+            //     breakpoint: 600,
+            //     settings: {
+            //       slidesToShow: 2,
+            //       slidesToScroll: 2,
+            //       initialSlide: 2
+            //     }
+            //   },
+            //   {
             //     breakpoint: 480,
             //     settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1
+            //       slidesToShow: 1,
+            //       slidesToScroll: 1
             //     }
-            // }
+            //   }
         ]
     };
     return (
-        <div className="fourth__section">
+        <div className="fifth__section">
             <div className="custom-container">
-                <div className="row fourth__section__title">
+                <div className="row fifth__section__title">
                     <div className="col-12">
-                        <h2>Explore the collection</h2>
+                        <h2>Welcome to the British Museum Shop</h2>
                     </div>
                 </div>
             </div>
             <div className="slider-container">
                 <Slider {...settings}>
                     <div className='single__item'>
-                        <h3>Egypt</h3>
                         <img src={Photo1} alt="" />
+                        <h3>Inspired by the Museum</h3>
                     </div>
                     <div className='single__item'>
-                        <h3>Egypt</h3>
                         <img src={Photo1} alt="" />
+                        <h3>Inspired by the Museum</h3>
                     </div>
                     <div className='single__item'>
-                        <h3>Egypt</h3>
                         <img src={Photo1} alt="" />
+                        <h3>Inspired by the Museum</h3>
                     </div>
                     <div className='single__item'>
-                        <h3>Egypt</h3>
                         <img src={Photo1} alt="" />
+                        <h3>Inspired by the Museum</h3>
                     </div>
                     <div className='single__item'>
-                        <h3>Egypt</h3>
                         <img src={Photo1} alt="" />
+                        <h3>Inspired by the Museum</h3>
                     </div>
                 </Slider>
             </div>
@@ -90,4 +77,4 @@ const FourthSection = () => {
     );
 }
 
-export default FourthSection
+export default FifthSection

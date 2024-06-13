@@ -4,6 +4,7 @@ import FirstSection from '../../../components/site/FirstSection/FirstSection'
 import SecondSection from '../../../components/site/SecondSection/SecondSection'
 import ThirdSection from '../../../components/site/ThirdSection/ThirdSection'
 import FourthSection from '../../../components/site/FourthSection/FourthSection'
+import FifthSection from '../../../components/site/FifthSection/FifthSection'
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
+      <FifthSection />
     </main>
   )
 }
