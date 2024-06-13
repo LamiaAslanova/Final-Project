@@ -1,13 +1,13 @@
-.first__section {
+.discover {
     background-color: black;
 
-    .first__section__top {
+    .discover__top {
         padding: 60px 0px;
         border-bottom: 1px solid #4a4a4a;
 
         div {
 
-            .first__section__top__left {
+            .discover__top__left {
 
                 h2 {
                     font-size: 44px;
@@ -18,7 +18,7 @@
                 }
             }
 
-            .first__section__top__right {
+            .discover__top__right {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -57,11 +57,11 @@
         }
     }
 
-    .first__section__bottom {
+    .discover__bottom {
         padding: 60px 0px;
         border-bottom: 1px solid #4a4a4a;
 
-        .first__section__bottom__title {
+        .discover__bottom__title {
 
             div {
 
@@ -76,7 +76,7 @@
             }
         }
 
-        .first__section__bottom__cards {
+        .discover__bottom__cards {
 
             div {
 
@@ -178,16 +178,16 @@
 
 
 @media (max-width: 1400px) {
-    .first__section {
+    .discover {
 
-        .first__section__top {
+        .discover__top {
             padding: 50px 0px;
         }
 
-        .first__section__bottom {
+        .discover__bottom {
             padding: 50px 0px;
 
-            .first__section__bottom__cards {
+            .discover__bottom__cards {
 
                 div {
 
@@ -214,14 +214,14 @@
 }
 
 @media (max-width: 992px) {
-    .first__section {
+    .discover {
 
-        .first__section__top {
+        .discover__top {
             padding: 40px 0px;
 
             div {
 
-                .first__section__top__left {
+                .discover__top__left {
                     width: 100%;
 
                     h2 {
@@ -231,17 +231,17 @@
                     }
                 }
 
-                .first__section__top__right {
+                .discover__top__right {
                     width: 100%;
                     justify-content: flex-start;
                 }
             }
         }
 
-        .first__section__bottom {
+        .discover__bottom {
             padding: 40px 0px;
 
-            .first__section__bottom__title {
+            .discover__bottom__title {
 
                 div {
 
@@ -253,7 +253,7 @@
                 }
             }
 
-            .first__section__bottom__cards {
+            .discover__bottom__cards {
 
                 div {
 
@@ -278,14 +278,14 @@
 }
 
 @media (max-width: 576px) {
-    .first__section {
+    .discover {
 
-        .first__section__top {
+        .discover__top {
             padding: 30px 0px;
 
             div {
 
-                .first__section__top__left {
+                .discover__top__left {
 
                     h2 {
                         margin-bottom: 20px;
@@ -294,7 +294,7 @@
                     }
                 }
 
-                .first__section__top__right{
+                .discover__top__right{
                     
                     ul{
                         gap: 10px;
@@ -315,10 +315,10 @@
             }
         }
 
-        .first__section__bottom {
+        .discover__bottom {
             padding: 30px 0px;
 
-            .first__section__bottom__title {
+            .discover__bottom__title {
 
                 div {
 
@@ -330,7 +330,7 @@
                 }
             }
 
-            .first__section__bottom__cards {
+            .discover__bottom__cards {
                 gap: 20px;
 
                 .single__card__col {

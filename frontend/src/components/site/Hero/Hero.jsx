@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './Hero.css';
-import VideoFile from '../../assets/videos/VideoBackground.mp4'
+import VideoFile from '../../../assets/videos/VideoBackground.mp4'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {

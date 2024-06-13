@@ -1,20 +1,20 @@
 import React from 'react'
-import './SecondSection.css'
+import './Visit.css'
 import Photo1 from '../../../assets/images/Photo2-1.jpg'
 import Photo2 from '../../../assets/images/Photo2-2.jpg'
 import Photo3 from '../../../assets/images/Photo2-3.jpg'
 import Photo4 from '../../../assets/images/Photo2-4.jpg'
 
-const SecondSection = () => {
+const Visit = () => {
     return (
-        <div className="second__section">
-            <div className="custom-container second__section__cont">
-                <div className="row second__section__title">
+        <div className="visit">
+            <div className="custom-container visit__cont">
+                <div className="row visit__title">
                     <div className="col-12">
                         <h2>Visit the Museum</h2>
                     </div>
                 </div>
-                <div className="row second__section__cards">
+                <div className="row visit__cards">
                     <div className="col-3 single__card__col">
                         <div className="single__card">
                             <div className="card__top">
@@ -65,4 +65,4 @@ const SecondSection = () => {
     )
 }
 
-export default SecondSection
+export default Visit

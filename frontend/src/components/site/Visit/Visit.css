@@ -1,10 +1,10 @@
-.second__section {
+.visit {
     background-color: black;
 
-    .second__section__cont {
+    .visit__cont {
         padding: 60px 0px;
 
-        .second__section__title {
+        .visit__title {
 
             div {
 
@@ -19,7 +19,7 @@
             }
         }
 
-        .second__section__cards {
+        .visit__cards {
 
             .single__card__col {
 
@@ -66,21 +66,21 @@
 /* Media */
 
 @media (max-width: 1400px) {
-    .second__section {
+    .visit {
 
-        .second__section__cont {
+        .visit__cont {
             padding: 50px 0px;
         }
     }
 }
 
 @media (max-width: 1200px) {
-    .second__section {
+    .visit {
 
-        .second__section__cont {
+        .visit__cont {
             padding: 50px 0px 10px;
 
-            .second__section__cards {
+            .visit__cards {
 
                 .single__card__col {
                     width: 49%;
@@ -92,12 +92,12 @@
 }
 
 @media (max-width: 992px) {
-    .second__section {
+    .visit {
 
-        .second__section__cont {
+        .visit__cont {
             padding: 40px 0px 10px;
 
-            .second__section__title {
+            .visit__title {
 
                 div {
 
@@ -109,7 +109,7 @@
                 }
             }
 
-            .second__section__cards {
+            .visit__cards {
 
                 .single__card__col {
                     width: 49.7%;
@@ -121,12 +121,12 @@
 }
 
 @media (max-width: 576px) {
-    .second__section {
+    .visit {
 
-        .second__section__cont {
+        .visit__cont {
             padding: 30px 0px 10px;
 
-            .second__section__title {
+            .visit__title {
 
                 div {
 
@@ -138,7 +138,7 @@
                 }
             }
 
-            .second__section__cards {
+            .visit__cards {
 
                 .single__card__col {
                     width: 100%;

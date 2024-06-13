@@ -1,4 +1,4 @@
-.third__section {
+.signup {
     background-image: url('../../../assets/images//museum.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -6,7 +6,7 @@
     background-position: right;
     padding: 60px 110px;
 
-    .third__section__div {
+    .signup__div {
         background-color: white;
         padding: 40px;
         display: flex;
@@ -14,7 +14,7 @@
         align-items: flex-start;
         gap: 50px;
 
-        .third__section__div__left {
+        .signup__div__left {
             width: 50%;
 
             h2 {
@@ -25,7 +25,7 @@
             }
         }
 
-        .third__section__div__right {
+        .signup__div__right {
             width: 50%;
 
             p {
@@ -63,13 +63,13 @@
 }
 
 @media (max-width: 992px) {
-    .third__section {
+    .signup {
         padding: 30px 60px;
 
-        .third__section__div {
+        .signup__div {
             padding: 30px;
 
-            .third__section__div__left {
+            .signup__div__left {
 
                 h2 {
                     font-size: 38px;
@@ -81,17 +81,17 @@
 }
 
 @media (max-width: 576px) {
-    .third__section {
+    .signup {
         padding: 20px 40px;
 
-        .third__section__div {
+        .signup__div {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             gap: 0px;
             padding: 20px;
 
-            .third__section__div__left {
+            .signup__div__left {
                 width: 100%;
 
                 h2 {
@@ -101,7 +101,7 @@
                 }
             }
 
-            .third__section__div__right {
+            .signup__div__right {
                 width: 100%;
             }
         }
@@ -109,11 +109,11 @@
 }
 
 @media (max-width: 478px) {
-    .third__section {
+    .signup {
 
-        .third__section__div {
+        .signup__div {
 
-            .third__section__div__right {
+            .signup__div__right {
 
                 a {
                     width: 100%;

@@ -1,4 +1,4 @@
-.fifth__section {
+.welcome {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
 
     div {
 
-        .fifth__section__title {
+        .welcome__title {
 
             div {
 

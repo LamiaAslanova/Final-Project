@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './ThirdSection.css'
+import './SignUp.css'
 
-const ThirdSection = () => {
+const SignUp = () => {
   return (
-    <div className="third__section">
-      <div className="third__section__div">
-        <div className='third__section__div__left'>
+    <div className="signup">
+      <div className="signup__div">
+        <div className='signup__div__left'>
           <h2>Sign up to our newsletters</h2>
         </div>
-        <div className='third__section__div__right'>
+        <div className='signup__div__right'>
           <p>Stay connected to the British Museum for the latest news, stories, exhibitions, events and visitor information.</p>
           <Link>
             <span>Sign up</span>
@@ -21,4 +21,4 @@ const ThirdSection = () => {
   )
 }
 
-export default ThirdSection
+export default SignUp
