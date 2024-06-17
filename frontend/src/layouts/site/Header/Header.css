@@ -34,6 +34,7 @@ header {
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            gap: 10px;
                             color: #a5a5a5;
                             font-weight: 500;
                             font-size: 18px;
@@ -42,7 +43,6 @@ header {
                             padding: 0px 15px 20px;
 
                             i {
-                                margin-right: 10px;
                                 font-size: 17px;
                             }
                         }

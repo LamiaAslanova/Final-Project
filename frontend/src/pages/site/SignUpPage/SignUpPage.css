@@ -1,0 +1,16 @@
+.signup__page{
+
+    .signup__page__cont{
+
+        .signup__page__row{
+
+            .signup__page__col{
+                margin: 0 auto;
+
+                img{
+                    width: 170px;
+                }
+            }
+        }
+    }
+}

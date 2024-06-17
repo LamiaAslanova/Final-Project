@@ -27,6 +27,7 @@ footer {
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
+                    flex-wrap: wrap;
                     gap: 10px;
 
                     a {
@@ -163,6 +164,7 @@ footer {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
+                        flex-wrap: wrap;
                         gap: 14px;
 
                         li {
@@ -201,8 +203,14 @@ footer {
                 .footer__top__left {
                     width: 100%;
 
+                    h2 {
+                        font-size: 38px;
+                        line-height: 46px;
+                        margin-bottom: 19px;
+                    }
+
                     .social__media {
-                        margin-bottom: 22px;
+                        margin-bottom: 19px;
                     }
                 }
 
@@ -221,19 +229,75 @@ footer {
                     width: 50%;
                 }
 
-                .special__footer__col{
+                .special__footer__col {
                     width: 100%;
                     flex-direction: row;
                     border-bottom: 1px solid #4a4a4a;
+                    margin-bottom: 40px;
 
-                    .footer__col__piece{
+                    .footer__col__piece {
 
                         width: 50%;
                     }
 
-                    img{
+                    img {
                         display: none;
                     }
+                }
+
+                .footer__last__col {
+                    width: 100%;
+                    flex-direction: row;
+                    gap: 20px;
+
+                    .footer__col__piece {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+
+        .footer__top__cont {
+
+            .footer__top {
+                padding: 30px 0 20px;
+
+                .footer__top__left {
+
+                    h2 {
+                        font-size: 32px;
+                        line-height: 40px;
+                        margin-bottom: 16px;
+                    }
+
+                    .social__media{
+                        margin-bottom: 16px;
+                    }
+                }
+
+
+                .footer__top__right{
+                    
+                    p{
+                        font-size: 20px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+
+        .footer__middle__cont{
+            padding: 30px 0 20px;
+
+            .footer__middle{
+
+                .special__footer__col{
+                    margin-bottom: 30px;
                 }
             }
         }

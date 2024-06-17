@@ -9,7 +9,7 @@ const Header = () => {
                 <div className="custom-container">
                     <div className="header">
                         <div className="header__left">
-                            <Link>
+                            <Link to='/'>
                                 <img src="https://www.britishmuseum.org/themes/custom/numiko/dist/img/british-museum-logo.svg" alt="" />
                             </Link>
                         </div>
@@ -19,7 +19,6 @@ const Header = () => {
                                     <li>
                                         <Link>
                                             <i class="fa-solid fa-cart-shopping"></i>
-                                            <p>Shop</p>
                                         </Link>
                                     </li>
                                     <li>
@@ -41,11 +40,9 @@ const Header = () => {
                                 <nav>
                                     <ul>
                                         <li><Link>Visit</Link></li>
-                                        <li><Link>Exhibitions and events</Link></li>
-                                        <li><Link>Collection</Link></li>
-                                        <li><Link>Learn</Link></li>
-                                        <li><Link>Membership</Link></li>
-                                        <li><Link className='rightmost'>Support us</Link></li>
+                                        <li><Link to='exhibitions-events'>Exhibitions and events</Link></li>
+                                        <li><Link to='collection'>Collection</Link></li>
+                                        <li><Link className='rightmost' to='shop'>Shop</Link></li>
                                     </ul>
                                 </nav>
                             </div>

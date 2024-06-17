@@ -1,0 +1,49 @@
+.add__ev{
+    width: calc(100% - 300px);
+    margin-left: auto;
+
+    form {
+        margin-top: 65px;
+
+        .formm {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 70px;
+
+            input {
+                padding: 10px;
+                width: 100%;
+            }
+
+            textarea {
+                padding: 10px;
+                width: 100%;
+                height: 162px;
+            }
+
+            .formm__left {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                gap: 20px;
+
+                button{
+                    margin-right: auto;
+                    padding: 8px 20px;
+                }
+            }
+
+            .formm__right {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    }
+}

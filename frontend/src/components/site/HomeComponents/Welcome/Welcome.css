@@ -1,0 +1,243 @@
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 60px 0px 90px;
+    flex-direction: column;
+
+    .welcome__cont {
+
+        .welcome__title {
+
+            .welcome__title__col {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 22px;
+
+                h2 {
+                    font-size: 44px;
+                    font-weight: 500;
+                    line-height: 52px;
+                    letter-spacing: 0;
+                    color: black;
+                }
+
+                .shop__now{
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    color: black;
+
+                    i{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider-container {
+        width: 91%;
+        margin: auto;
+
+        .slick-list {
+            margin: 0 -10px;
+            /* overflow-y: visible; */
+            /* height: 619px; */
+
+            .slick-slide {
+                padding: 0 25px;
+
+                .single__item {
+                    background-color: white;
+                    padding: 30px;
+
+                    img {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        padding: 10px;
+                    }
+
+                    h3 {
+                        font-size: 22px;
+                        line-height: 1.36;
+                        color: black;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -20px;
+            z-index: 10;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .slick-arrow::before {
+            font-size: 50px;
+            color: black;
+        }
+
+        ul {
+            bottom: -40px;
+
+            li {
+                margin: 0;
+
+                button::before {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .shop__now__button {
+        width: 89%;
+        background-color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        display: none;
+        margin-top: 55px;
+
+        span {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 0;
+            color: black;
+        }
+
+        i {
+            height: 100%;
+            color: black;
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/* Media */
+
+
+
+@media (max-width: 1400px){
+    .welcome{
+        padding: 50px 0 80px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .welcome {
+
+        .slider-container {
+
+            .slick-list {
+
+                .slick-slide {
+                    padding: 0 19px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .welcome {
+        padding: 40px 0 40px;
+
+        .welcome__cont {
+
+            .welcome__title {
+
+                .welcome__title__col {
+                    margin-bottom: 19px;
+
+                    h2 {
+                        font-size: 38px;
+                        line-height: 46px;
+                    }
+                    
+                    .shop__now{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .slider-container {
+            width: 90%;
+
+            .slick-list {
+
+                .slick-slide {
+                    padding: 0 14.73px;
+                }
+            }
+        }
+
+        .shop__now__button{
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome {
+
+        .slider-container {
+
+            .slick-list {
+
+                .slick-slide {
+                    padding: 0 70px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome {
+        padding: 30px 0 30px;
+
+        .welcome__cont {
+
+            .welcome__title {
+
+                .welcome__title__col {
+                    margin-bottom: 16px;
+
+                    h2 {
+                        font-size: 32px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .welcome {
+
+        .slider-container {
+
+            .slick-arrow::before {
+                font-size: 33px;
+            }
+
+            .slick-next {
+                right: -5px;
+            }
+        }
+    }
+}

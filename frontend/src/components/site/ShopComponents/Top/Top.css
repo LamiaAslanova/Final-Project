@@ -1,0 +1,107 @@
+.top {
+    padding: 40px 0 0;
+    background-color: #f5f5f5;
+
+    .top__mini__cont {
+
+        .top__mini__row {
+
+            .top__mini__col {
+
+                .delivery {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 10px;
+                    background-color: #dbdbdb;
+                    margin-bottom: 30px;
+
+                    .delivery__piece {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px 25px;
+
+                        img {
+                            margin-bottom: 10px;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 13.2px;
+                            color: #333333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .top__cont {
+
+        .top__row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .slider-container {
+                /* width: 100%; */
+                /* margin: auto; */
+
+                .slick-slider {
+
+                    .slide__component {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        height: 670px;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover;
+                        }
+
+                        .slide__component__content {
+                            background: rgba(39, 39, 39, 0.7);
+                            padding: 30px;
+                            width: 360px;
+                            position: absolute;
+                            left: 100px;
+                            top: 100px;
+
+                            h4 {
+                                font-size: 24px;
+                                font-weight: 500;
+                                line-height: 26.4px;
+                                color: white;
+                                margin-bottom: 5px;
+                            }
+
+                            p {
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: 25.6px;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                ul{
+                    li{
+                        margin: 0 3px;
+
+                        button::before{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

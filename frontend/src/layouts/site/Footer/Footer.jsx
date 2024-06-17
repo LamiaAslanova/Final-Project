@@ -118,7 +118,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-3 footer__col">
+          <div className="col-3 footer__col footer__last__col">
             <div className="footer__col__piece">
               <h3>Commercial</h3>
               <ul>

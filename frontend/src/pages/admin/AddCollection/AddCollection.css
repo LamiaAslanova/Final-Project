@@ -1,0 +1,28 @@
+.add__co {
+    width: calc(100% - 300px);
+    margin-left: auto;
+    height: 90vh;
+
+    form {
+        height: 100%;
+
+        .formmm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+
+            input {
+                padding: 10px;
+                width: 40%;
+            }
+
+            button {
+                padding: 8px 20px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
