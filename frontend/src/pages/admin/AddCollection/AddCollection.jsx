@@ -9,8 +9,8 @@ const AddCollection = () => {
   const { collections, setCollections } = useContext(MainContext)
 
   return (
-    <div className="container-fluid">
-      <div className="add__co">
+    <div className="add__co">
+        <div className="container add__co__cont">
         <Formik
           initialValues={{ title: '', image: '', category: '' }}
           validate={values => { }}
@@ -32,8 +32,8 @@ const AddCollection = () => {
             isSubmitting,
             /* and other goodies */
           }) => (
-            <form onSubmit={handleSubmit}>
-              <div className="formmm">
+            <form className='row form3' onSubmit={handleSubmit}>
+              <div className="col-5 form3__col">
                 <input
                   type="text"
                   name="title"

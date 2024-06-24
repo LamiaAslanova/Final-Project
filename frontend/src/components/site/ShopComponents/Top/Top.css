@@ -2,43 +2,6 @@
     padding: 40px 0 0;
     background-color: #f5f5f5;
 
-    .top__mini__cont {
-
-        .top__mini__row {
-
-            .top__mini__col {
-
-                .delivery {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    padding: 10px;
-                    background-color: #dbdbdb;
-                    margin-bottom: 30px;
-
-                    .delivery__piece {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 10px 25px;
-
-                        img {
-                            margin-bottom: 10px;
-                        }
-
-                        span {
-                            font-size: 12px;
-                            font-weight: 500;
-                            line-height: 13.2px;
-                            color: #333333;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .top__cont {
 
         .top__row {
@@ -92,11 +55,11 @@
                     }
                 }
 
-                ul{
-                    li{
+                ul {
+                    li {
                         margin: 0 3px;
 
-                        button::before{
+                        button::before {
                             font-size: 14px;
                         }
                     }

@@ -1,15 +1,18 @@
 .add__ev{
     width: calc(100% - 300px);
     margin-left: auto;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    form {
-        margin-top: 65px;
+    .add__ev__cont {
 
-        .formm {
+        .form2 {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 70px;
+            gap: 50px;
 
             input {
                 padding: 10px;
@@ -22,8 +25,8 @@
                 height: 162px;
             }
 
-            .formm__left {
-                width: 30%;
+            .form2__left {
+                width: 35%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -36,8 +39,8 @@
                 }
             }
 
-            .formm__right {
-                width: 30%;
+            .form2__right {
+                width: 35%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

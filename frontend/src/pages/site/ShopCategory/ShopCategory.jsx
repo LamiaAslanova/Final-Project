@@ -1,11 +1,11 @@
 import React from 'react'
 import './ShopCategory.css'
-import Main from '../../../components/site/ShopCatComponents/Main/Main'
+import CatCards from '../../../components/site/ShopCatComponents/CatCards/CatCards'
 
 const ShopCategory = () => {
     return (
         <main>
-            <Main/>
+            <CatCards/>
         </main>
     )
 }

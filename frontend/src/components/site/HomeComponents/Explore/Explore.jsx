@@ -26,7 +26,7 @@ const Explore = () => {
             //     }
             // },
             {
-                breakpoint: 993,
+                breakpoint: 1201,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -60,7 +60,7 @@ const Explore = () => {
                 <div className="row explore__title">
                     <div className="col-12 explore__title__col">
                         <h2>Explore the collection</h2>
-                        <Link className='see__all'>See all<i class="fa-solid fa-circle-chevron-right"></i></Link>
+                        <Link to='collection' className='see__all'>See all<i class="fa-solid fa-circle-chevron-right"></i></Link>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const Explore = () => {
                     </div>
                 </Slider>
             </div>
-            <Link className='see__all__button'>
+            <Link to='collection' className='see__all__button'>
                 <span>See all</span>
                 <i class="fa-solid fa-circle-chevron-right"></i>
             </Link>

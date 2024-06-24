@@ -147,7 +147,7 @@
                                 font-weight: 500;
                                 line-height: 38px;
                                 letter-spacing: 0;
-                                color: #92c56e;
+                                color: white;
                                 margin-bottom: 15px;
                             }
                         }
@@ -156,6 +156,7 @@
                             display: flex;
                             justify-content: space-between;
                             align-items: flex-end;
+                            width: 100%;
                             margin-top: 114px;
 
                             p {
@@ -173,7 +174,7 @@
                                 line-height: 21.7px;
                                 letter-spacing: 0;
                                 color: black;
-                                background-color: #92C56E;
+                                background-color: white;
                                 width: 86px;
                                 height: 86px;
                                 display: flex;
@@ -197,6 +198,13 @@
                     }
 
                 }
+            }
+        }
+
+        .see__ex__button__row {
+            display: none;
+
+            .see__ex__button__col{
 
                 .see__ex__button {
                     width: 100%;
@@ -205,9 +213,8 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    display: none;
                     margin-top: 20px;
-
+    
                     span {
                         font-size: 18px;
                         font-weight: 500;
@@ -215,9 +222,8 @@
                         letter-spacing: 0;
                         color: black;
                     }
-
+    
                     i {
-                        height: 100%;
                         color: black;
                         font-size: 18px;
                     }
@@ -308,7 +314,7 @@
                         line-height: 46px;
                     }
 
-                    .see__ex {
+                    a {
                         display: none;
                     }
                 }
@@ -333,14 +339,10 @@
                         }
                     }
                 }
+            }
 
-                .special__button__col {
-                    width: 100%;
-
-                    .see__ex__button {
-                        display: flex;
-                    }
-                }
+            .see__ex__button__row {
+                display: flex;
             }
         }
     }
@@ -389,10 +391,6 @@
 
             .discover__bottom__title {
 
-                a {
-                    display: none;
-                }
-
                 .discover__bottom__title__col {
                     margin-bottom: 16px;
 
@@ -423,13 +421,6 @@
                                 }
                             }
                         }
-                    }
-                }
-
-                .special__button__col {
-
-                    a {
-                        margin-top: 0px;
                     }
                 }
             }

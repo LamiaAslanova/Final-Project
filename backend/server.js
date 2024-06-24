@@ -6,6 +6,7 @@ const ExhibitionsRouter = require('./routes/Exhibition.routes')
 const EventsRouter = require('./routes/Event.routes')
 const CollectionsRouter = require('./routes/Collection.routes')
 const ShopRouter = require('./routes/Shop.routes')
+const UserRouter = require('./routes/User.routes')
 require('dotenv').config()
 
 const app = express()
@@ -16,6 +17,9 @@ app.use('/exhibitions', ExhibitionsRouter)
 app.use('/events', EventsRouter)
 app.use('/collections', CollectionsRouter)
 app.use('/shop', ShopRouter)
+app.use('/signUp', UserRouter)
+app.use('/signIn', UserRouter)
+app.use('/uploads', express.static('./uploads'))
 
 mongoose.connect(process.env.CONNECTION__STRING)
     .then(res => {

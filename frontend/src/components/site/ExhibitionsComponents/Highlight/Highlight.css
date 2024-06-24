@@ -21,7 +21,7 @@
                     margin-bottom: 22px;
                 }
 
-                .see__ex {
+                .see__ev {
                     font-size: 18px;
                     font-weight: 400;
                     line-height: 28px;
@@ -140,6 +140,7 @@
                         }
 
                         .card__bottom__bottom {
+                            width: 100%;
 
                             h3 {
                                 font-size: 22px;

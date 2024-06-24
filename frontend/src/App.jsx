@@ -39,7 +39,11 @@ const App = () => {
     fetchData()
   }, [])
 
-  const contextData = {exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop}
+  const getDetailPath = (category, id) => {
+    return category === 'Special' ? `/exhibition-details/${id}` : `/free-exhibition-details/${id}`
+  }
+
+  const contextData = {exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop, getDetailPath}
 
   return (
     <>

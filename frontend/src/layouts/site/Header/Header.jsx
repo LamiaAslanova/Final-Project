@@ -17,8 +17,9 @@ const Header = () => {
                             <div className="header__right__top">
                                 <ul>
                                     <li>
-                                        <Link>
+                                        <Link to='/basket'>
                                             <i class="fa-solid fa-cart-shopping"></i>
+                                            <p>Cart (0)</p>
                                         </Link>
                                     </li>
                                     <li>

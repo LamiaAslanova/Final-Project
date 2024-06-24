@@ -1,5 +1,4 @@
 .exHero {
-    background-image: url('../../../../assets/images/Mick.jpg');
     background-position: left;
     background-attachment: fixed;
     background-size: cover;
@@ -16,67 +15,74 @@
         .exHero__cont {
 
             .exHero__row {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-
-                .exHero__content {
+                
+                .exHero__col {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    border: 1px solid #4a4a4a;
-                    background-color: black;
-                    width: 415px;
-                    padding: 30px;
-
-                    h1 {
-                        font-size: 44px;
-                        font-weight: 500;
-                        line-height: 52px;
-                        color: #75bee9;
-                        margin-bottom: 22px;
-                    }
-
-                    p {
-                        font-size: 18px;
-                        font-weight: 400;
-                        line-height: 28px;
-                        color: white;
-                        margin-bottom: 20px;
-                    }
-
-                    .exHero__content__span {
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 21.7px;
-                        color: white;
-                        margin-bottom: 7px;
-                    }
-
-                    a {
-                        width: 100%;
-                        background-color: #75bee9;
-                        padding: 10px 20px;
+                    justify-content: flex-end;
+                    align-items: center;
+                    
+                    .exHero__content {
                         display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        border: 1px solid #4a4a4a;
+                        background-color: black;
+                        width: 415px;
+                        padding: 30px;
 
-                        span {
-                            font-size: 18px;
+                        h1 {
+                            font-size: 44px;
                             font-weight: 500;
-                            line-height: 28px;
-                            letter-spacing: 0;
-                            color: black;
+                            line-height: 52px;
+                            color: white;
+                            margin-bottom: 22px;
                         }
 
-                        i {
-                            color: black;
+                        p {
                             font-size: 18px;
+                            font-weight: 400;
+                            line-height: 28px;
+                            color: white;
+                            margin-bottom: 20px;
                         }
-                    }
 
+                        .content__last__p {
+                            margin: 0px;
+                        }
+
+                        .exHero__content__span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 21.7px;
+                            color: white;
+                            margin-bottom: 7px;
+                        }
+
+                        a {
+                            width: 100%;
+                            background-color: white;
+                            padding: 10px 20px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 20px;
+
+                            span {
+                                font-size: 18px;
+                                font-weight: 500;
+                                line-height: 28px;
+                                letter-spacing: 0;
+                                color: black;
+                            }
+
+                            i {
+                                color: black;
+                                font-size: 18px;
+                            }
+                        }
+
+                    }
                 }
             }
 

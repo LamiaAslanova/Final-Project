@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Guided.css'
 import Card from './Card'
-import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
 const Guided = () => {
-  return (
-    <div className="guided">
+
+    const { events } = useContext(MainContext)
+
+    return (
+        <div className="guided">
             <div className="custom-container guided__cont">
                 <div className="row guided__title">
                     <div className="col-12 guided__title__col">
                         <h2>Guided tours</h2>
-                        <Link className='see__ex'>Browse all guided talks and tours<i class="fa-solid fa-circle-chevron-right"></i></Link>
                     </div>
                 </div>
                 <div className="row guided__cards">
-                    <Card />
+                    {
+                        events.filter(item => item.category === 'Guided tour').slice(0, 3).map(event => {
+                            return (
+                                <Card event={event} />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default Guided

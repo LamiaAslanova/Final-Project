@@ -56,7 +56,7 @@ const Americas = () => {
     };
 
     return (
-        <div className="americas">
+        <div id="americas">
             <div className="custom-container americas__cont">
                 <div className="row americas__title">
                     <div className="col-12 americas__title__col">

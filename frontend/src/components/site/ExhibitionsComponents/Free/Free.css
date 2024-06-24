@@ -60,10 +60,6 @@
                                 letter-spacing: 0;
                                 color: white;
                                 margin-bottom: 15px;
-
-                                span {
-                                    color: #92c56e;
-                                }
                             }
                         }
 
@@ -95,7 +91,7 @@
                                     line-height: 21.7px;
                                     letter-spacing: 0;
                                     color: black;
-                                    background-color: #92C56E;
+                                    background-color: white;
                                     width: 86px;
                                     height: 86px;
                                     display: flex;

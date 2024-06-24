@@ -1,15 +1,18 @@
 .add__ex {
     width: calc(100% - 300px);
     margin-left: auto;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    form {
-        margin-top: 95px;
+    .add__ex__cont {
 
         .form {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 70px;
+            gap: 50px;
 
             input {
                 padding: 10px;
@@ -23,21 +26,21 @@
             }
 
             .form__left {
-                width: 30%;
+                width: 35%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-end;
                 gap: 20px;
 
-                button{
+                button {
                     margin-right: auto;
                     padding: 8px 20px;
                 }
             }
 
             .form__right {
-                width: 30%;
+                width: 35%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

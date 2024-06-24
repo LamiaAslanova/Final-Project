@@ -39,16 +39,16 @@
     }
 
     .slider-container {
-        width: 91%;
+        width: 89%;
         margin: auto;
 
         .slick-list {
-            margin: 0 -10px;
+            margin: 0 -12px;
             /* overflow-y: visible; */
             /* height: 619px; */
 
             .slick-slide {
-                padding: 0 25px;
+                padding: 0 12px;
 
                 .single__item {
                     background-color: white;
@@ -79,8 +79,20 @@
             right: 10px;
         }
 
+        .slick-prev::before{
+            font-family: "Font Awesome 6 Free";
+            content: "\f137";
+            font-weight: 900;
+        }
+        
+        .slick-next::before{
+            font-family: "Font Awesome 6 Free";
+            content: "\f138";
+            font-weight: 900;
+        }
+
         .slick-arrow::before {
-            font-size: 50px;
+            font-size: 48px;
             color: black;
         }
 
@@ -135,21 +147,6 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .welcome {
-
-        .slider-container {
-
-            .slick-list {
-
-                .slick-slide {
-                    padding: 0 19px;
-                }
-            }
-        }
-    }
-}
-
 @media (max-width: 992px) {
     .welcome {
         padding: 40px 0 40px;
@@ -173,34 +170,8 @@
             }
         }
 
-        .slider-container {
-            width: 90%;
-
-            .slick-list {
-
-                .slick-slide {
-                    padding: 0 14.73px;
-                }
-            }
-        }
-
         .shop__now__button{
             display: flex;
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .welcome {
-
-        .slider-container {
-
-            .slick-list {
-
-                .slick-slide {
-                    padding: 0 70px;
-                }
-            }
         }
     }
 }
@@ -235,8 +206,8 @@
                 font-size: 33px;
             }
 
-            .slick-next {
-                right: -5px;
+            .slick-prev {
+                left: -3px;
             }
         }
     }

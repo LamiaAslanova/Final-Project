@@ -41,6 +41,27 @@ header {
                             line-height: 28px;
                             letter-spacing: 0;
                             padding: 0px 15px 20px;
+                            
+                            p{
+                                position: relative;
+                            }
+
+                            p::before {
+                                position: absolute;
+                                content: "";
+                                bottom: 0;
+                                left: 50%;
+                                width: 0;
+                                height: 2px;
+                                background-color: white;
+                                transition: all linear 0.3s;
+                                transform-origin: center;
+                            }
+    
+                            p:hover::before {
+                                left: 0;
+                                width: 100%;
+                            }
 
                             i {
                                 font-size: 17px;
@@ -60,6 +81,7 @@ header {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    gap: 40px;
 
                     li {
 
@@ -69,7 +91,25 @@ header {
                             font-size: 18px;
                             line-height: 28px;
                             letter-spacing: 0;
-                            padding: 0px 20px;
+                            /* padding: 0px 20px; */
+                            position: relative;
+                        }
+
+                        a::before {
+                            position: absolute;
+                            content: "";
+                            bottom: -3px;
+                            left: 50%;
+                            width: 0;
+                            height: 1.5px;
+                            background-color: white;
+                            transition: all linear 0.3s;
+                            transform-origin: center;
+                        }
+
+                        a:hover::before {
+                            left: 0;
+                            width: 100%;
                         }
 
                         .rightmost {

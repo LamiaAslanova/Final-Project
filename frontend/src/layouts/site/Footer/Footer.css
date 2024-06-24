@@ -158,7 +158,7 @@ footer {
 
             .footer__bottom {
 
-                div {
+                .footer__bottom__col {
 
                     ul {
                         display: flex;
@@ -298,6 +298,7 @@ footer {
 
                 .special__footer__col{
                     margin-bottom: 30px;
+                    gap: 20px;
                 }
             }
         }

@@ -165,7 +165,7 @@ const Footer = () => {
       <div className="footer_b">
         <div className="custom-container footer__bottom__cont">
           <div className="row footer__bottom">
-            <div className="col-12">
+            <div className="col-12 footer__bottom__col">
               <ul>
                 <li>
                   <Link>Privacy policy</Link>

@@ -9,8 +9,8 @@ const AddShop = () => {
     const { shop, setShop } = useContext(MainContext)
 
     return (
-        <div className="container-fluid">
-            <div className="add__sh">
+        <div className="add__sh">
+                <div className="container add__sh__cont">
                 <Formik
                     initialValues={{ title: '', image: '', additionalImage: '', category: '', price: '', about: '', dimensions: '', weight: '' }}
                     validate={values => { }}
@@ -32,9 +32,8 @@ const AddShop = () => {
                         isSubmitting,
                         /* and other goodies */
                     }) => (
-                        <form onSubmit={handleSubmit}>
-                            <div className="formmmm">
-                                <div className="formmmm__left">
+                        <form className='row form4' onSubmit={handleSubmit}>
+                                <div className="col-6 form4__left">
                                     <input
                                         type="text"
                                         name="title"
@@ -71,7 +70,7 @@ const AddShop = () => {
                                         Submit
                                     </button>
                                 </div>
-                                <div className="formmmm__right">
+                                <div className="col-6 form4__right">
                                     <input
                                         type="number"
                                         name="price"
@@ -105,7 +104,6 @@ const AddShop = () => {
                                         value={values.weight}
                                     />
                                 </div>
-                            </div>
                         </form>
                     )}
                 </Formik>

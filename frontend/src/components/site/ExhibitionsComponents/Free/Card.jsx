@@ -1,73 +1,36 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from '../../../../assets/images/Hockney.jpg'
+import {Link} from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const Card = () => {
+const Card = ({exhibition}) => {
+
+    const {getDetailPath} = useContext(MainContext)
+
+    const detailPath = getDetailPath(exhibition.category, exhibition._id)
+
     return (
         <>
             <div className="col-4 single__card__col">
-                <div className="card single__card">
+                <Link to={detailPath} className="card single__card">
                     <div className="card-body card__top">
                         <div className="card__top__top">
-                            <h3><span>Drawing attention</span><br /> emerging</h3>
+                            <h3>{exhibition.title}</h3>
                         </div>
                         <div className="card__top__bottom">
                             <div className="card__top__bottom__left">
                                 <p>Exhibition</p>
-                                <p>1 February - 23 June 2024</p>
+                                <p>{exhibition.date}</p>
                             </div>
                             <div className='card__top__bottom__right'>
-                                <div>On UK tour</div>
+                                <div>Free</div>
                             </div>
                         </div>
                     </div>
                     <div className="card__bottom">
-                        <img src={Image} alt="" />
+                        <img src={exhibition.image} alt="" />
                     </div>
-                </div>
-            </div>
-            <div className="col-4 single__card__col">
-                <div className="card single__card">
-                    <div className="card-body card__top">
-                        <div className="card__top__top">
-                            <p>A British Museum Touring Exhibition</p>
-                            <h3><span>Drawing attention</span><br /> emerging artists in dialogue</h3>
-                        </div>
-                        <div className="card__top__bottom">
-                            <div className="card__top__bottom__left">
-                                <p>Exhibition</p>
-                                <p>1 February - 23 June 2024</p>
-                            </div>
-                            <div className='card__top__bottom__right'>
-                                <div>On UK tour</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card__bottom">
-                        <img src={Image} alt="" />
-                    </div>
-                </div>
-            </div>
-            <div className="col-4 single__card__col">
-                <div className="card single__card">
-                    <div className="card-body card__top">
-                        <div className="card__top__top">
-                            <p>A British Museum Touring Exhibition</p>
-                            <h3><span>Drawing attention</span><br /> emerging artists in dialogue</h3>
-                        </div>
-                        <div className="card__top__bottom">
-                            <div className="card__top__bottom__left">
-                                <p>Exhibition</p>
-                                <p>1 February - 23 June 2024</p>
-                            </div>
-                            <div className='card__top__bottom__right'>
-                                <div>On UK tour</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card__bottom">
-                        <img src={Image} alt="" />
-                    </div>
-                </div>
+                </Link>
             </div>
             {/* <div className="col-6 special__button__col">
                 <Link className='see__ex__button'>

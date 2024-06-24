@@ -1,6 +1,6 @@
 import React from 'react'
 import './Description.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 
 const Description = () => {
     return (
@@ -20,7 +20,7 @@ const Description = () => {
                     </div>
                     <div className="col-4 description__col4">
                         <div className="description__col4__piece" id='topmost'>
-                            <Link>
+                            <Link to='americas' smooth={true} duration={500}>
                                 <span>Americas</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>

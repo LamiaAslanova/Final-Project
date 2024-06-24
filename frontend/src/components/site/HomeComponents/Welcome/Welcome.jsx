@@ -59,7 +59,7 @@ const Welcome = () => {
                 <div className="row welcome__title">
                     <div className="col-12 welcome__title__col">
                         <h2>Welcome to the British Museum Shop</h2>
-                        <Link className='shop__now'>Shop now<i class="fa-solid fa-circle-chevron-right"></i></Link>
+                        <Link to='shop' className='shop__now'>Shop now<i class="fa-solid fa-circle-chevron-right"></i></Link>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ const Welcome = () => {
                     </div>
                 </Slider>
             </div>
-            <Link className='shop__now__button'>
+            <Link to='shop' className='shop__now__button'>
                 <span>Shop now</span>
                 <i class="fa-solid fa-circle-chevron-right"></i>
             </Link>

@@ -1,91 +1,90 @@
-.americas {
+#americas {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: black;
     padding: 60px 0 80px;
-}
 
-.americas__cont {
-    .americas__title {
-        .americas__title__col {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 22px;
-
-            h2 {
-                font-size: 44px;
-                font-weight: 500;
-                line-height: 52px;
-                color: white;
-            }
-
-            p {
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 28px;
-                color: white;
-            }
-        }
-    }
-}
-
-.slider-container {
-    width: 89%;
-    margin: auto;
-
-    .slick-list {
-        margin: 0 -10px;
-        overflow-y: visible;
-
-        .slick-slide {
-            padding: 0 10px; /* Paddingi 10px olaraq təyin edin */
-            box-sizing: border-box;
-
-            .single__carousel {
-                box-sizing: border-box;
-                height: 580px;
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 1.36;
-                    color: white;
+    .americas__cont {
+        .americas__title {
+            .americas__title__col {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 22px;
+    
+                h2 {
+                    font-size: 44px;
                     font-weight: 500;
+                    line-height: 52px;
+                    color: white;
                 }
-
-                img {
-                    display: block;
-                    width: 100%; /* Şəkil eni tam olmalıdır */
-                    height: auto; /* Şəkil hündürlüyü avtomatik olsun */
+    
+                p {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    color: white;
                 }
             }
         }
     }
 
-    .slick-prev {
-        left: -20px;
-        z-index: 10;
-    }
+    .slider-container{
+        width: 89%;
+        margin: auto;
 
-    .slick-next {
-        right: 10px;
-    }
+        .slick-list{
+            margin: 0 -12px;
 
-    .slick-arrow::before {
-        font-size: 50px;
-    }
+            .slick-slide{
+                padding: 0 12px;
 
-    ul {
-        bottom: -25px;
+                .single__carousel{
+                    height: 530px;
 
-        li {
-            margin: 0;
+                    img{
+                        width: 100%;
+                        height: 90%;
+                        object-fit: cover;
+                        margin-bottom: 18px;
+                    }
 
-            button::before {
-                color: white;
-                font-size: 10px;
+                    h3{
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: white;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -20px;
+            z-index: 10;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .slick-arrow::before {
+            font-size: 50px;
+            color: white;
+        }
+
+        ul {
+            bottom: -40px;
+
+            li {
+                margin: 0;
+
+                button::before {
+                    font-size: 10px;
+                    color: white;
+                }
             }
         }
     }

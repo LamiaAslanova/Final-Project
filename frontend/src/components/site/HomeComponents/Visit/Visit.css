@@ -85,7 +85,7 @@
             .visit__cards {
 
                 .single__card__col {
-                    width: 49%;
+                    width: 50%;
                     margin-bottom: 40px;
                 }
             }
@@ -114,7 +114,6 @@
             .visit__cards {
 
                 .single__card__col {
-                    width: 49.7%;
                     margin-bottom: 30px;
                 }
             }

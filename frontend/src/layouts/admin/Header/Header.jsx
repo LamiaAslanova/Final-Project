@@ -38,19 +38,19 @@ const Header = () => {
                 </Link>
               </li>
               <li class="sidebar-dropdown">
-                <Link>
+                <Link to='events-infos'>
                   <i class="fa-solid fa-calendar"></i>
                   <span>Events</span>
                 </Link>
               </li>
               <li class="sidebar-dropdown">
-                <Link>
+                <Link to='collection-infos'>
                   <i class="fa-solid fa-palette"></i>
                   <span>Collection</span>
                 </Link>
               </li>
               <li class="sidebar-dropdown">
-                <Link>
+                <Link to='shop-infos'>
                   <i class="fa fa-shopping-cart"></i>
                   <span>Shop</span>
                 </Link>

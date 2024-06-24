@@ -22,7 +22,7 @@ const Categories = () => {
                     <div className="col-10">
                         <div className="row">
                             <div className="col-4 category__col">
-                                <Link to='shop-category' className='category'>
+                                <Link to='/shop-category' className='category'>
                                     <img src={replicas} alt="" />
                                     <div className="category__caption">
                                         <h3>Replicas</h3>

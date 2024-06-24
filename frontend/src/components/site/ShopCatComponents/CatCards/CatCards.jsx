@@ -1,15 +1,24 @@
 import React from 'react'
-import './Main.css'
+import './CatCards.css'
 import photo from '../../../../assets/images/shopitem.jpg'
+import { Link } from 'react-router-dom'
+import Delivery from '../../ShopComponents/DeliveryInfo/Delivery'
 
-const Main = () => {
+const CatCards = () => {
   return (
-    <div className="main">
-      <div className="custom-container main__cont">
-        <div className="row main__row">
+    <div className="catCards">
+      <div className="custom-container catCards__mini__cont">
+        <div className="row catCards__mini__row">
+          <div className="col-8 catCards__mini__col">
+            <Delivery/>
+          </div>
+        </div>
+      </div>
+      <div className="custom-container catCards__cont">
+        <div className="row catCards__row">
           <div className="col-8">
             <div className="row">
-              <div className="col-12 main__col12">
+              <div className="col-12 catCards__col12">
                 <p>Sort By</p>
                 <select name="sort" id="sort">
                   <option value="default">Default</option>
@@ -21,7 +30,18 @@ const Main = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-4 main__col4">
+              <div className="col-4 catCards__col4">
+                <div className="card single__card">
+                  <Link to='/shop-details' className="card__top">
+                    <img src={photo} alt="" />
+                  </Link>
+                  <div className="card-body card__bottom">
+                    <Link to='/shop-details'>Escape of Odysseus Vase</Link>
+                    <p>$199.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-4 catCards__col4">
                 <div className="card single__card">
                   <div className="card__top">
                     <img src={photo} alt="" />
@@ -32,7 +52,7 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 main__col4">
+              <div className="col-4 catCards__col4">
                 <div className="card single__card">
                   <div className="card__top">
                     <img src={photo} alt="" />
@@ -43,7 +63,7 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 main__col4">
+              <div className="col-4 catCards__col4">
                 <div className="card single__card">
                   <div className="card__top">
                     <img src={photo} alt="" />
@@ -54,7 +74,7 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 main__col4">
+              <div className="col-4 catCards__col4">
                 <div className="card single__card">
                   <div className="card__top">
                     <img src={photo} alt="" />
@@ -65,18 +85,7 @@ const Main = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 main__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vase</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 main__col4">
+              <div className="col-4 catCards__col4">
                 <div className="card single__card">
                   <div className="card__top">
                     <img src={photo} alt="" />
@@ -95,4 +104,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default CatCards

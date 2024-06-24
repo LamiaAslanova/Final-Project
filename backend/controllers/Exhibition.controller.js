@@ -22,7 +22,7 @@ const ExhibitionsController = {
     },
     add: async (req, res) => {
         try {
-            const newItem = new Exhibitions({ ...req.body })
+            const newItem = new Exhibitions({ ...req.body, image: 'http://localhost:8080/uploads/' + req.file.filename })
             await newItem.save()
             const allItems = await Exhibitions.find()
             res.send(allItems)
