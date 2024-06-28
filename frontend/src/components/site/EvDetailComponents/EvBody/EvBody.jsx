@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './EvBody.css'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const EvBody = ({item}) => {
+const EvBody = ({ item }) => {
+
+  const { addToCart } = useContext(MainContext)
+
   return (
-    <div className="evBody">
+    <div id="evBody">
       <div className="custom-container evBody__cont">
         <div className="row evBody__row">
           <div className="col-8 evBody__col8">
             <h3>{item.desc}</h3>
-            <p style={{whiteSpace: 'pre-wrap'}}>{item.additionalDesc}</p>
+            <p style={{ whiteSpace: 'pre-wrap' }}>{item.additionalDesc}</p>
           </div>
           <div className="col-4 evBody__col4">
             <div className="evBody__col4__piece" id='topmost'>
@@ -38,13 +42,13 @@ const EvBody = ({item}) => {
             </div>
             <div className="evBody__col4__piece">
               <div className="piece__top only__piece__top">
-              <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <p>{item.age}</p>
               </div>
             </div>
             <div className="evBody__col4__button">
-              <Link>
-                <span>Book tickets</span>
+              <Link onClick={() => { addToCart(item) }}>
+                <span>Add to cart</span>
                 <i class="fa-solid fa-circle-chevron-right"></i>
               </Link>
             </div>

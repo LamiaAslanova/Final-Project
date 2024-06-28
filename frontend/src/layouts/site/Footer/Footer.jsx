@@ -11,12 +11,12 @@ const Footer = () => {
           <div className="col-6 footer__top__left">
             <h2>Connect with us</h2>
             <div className="social__media">
-              <Link><i class="fa-brands fa-facebook-f"></i></Link>
-              <Link><i class="fa-brands fa-x-twitter"></i></Link>
-              <Link><i class="fa-brands fa-instagram"></i></Link>
-              <Link><i class="fa-brands fa-youtube"></i></Link>
-              <Link><i class="fa-brands fa-weibo"></i></Link>
-              <Link><i class="fa-brands fa-weixin"></i></Link>
+              <a target='_blank' href='https://www.facebook.com/britishmuseum'><i class="fa-brands fa-facebook-f"></i></a>
+              <a target='_blank' href='https://x.com/britishmuseum'><i class="fa-brands fa-x-twitter"></i></a>
+              <a target='_blank' href='https://www.instagram.com/britishmuseum/'><i class="fa-brands fa-instagram"></i></a>
+              <a target='_blank' href='https://www.youtube.com/user/britishmuseum'><i class="fa-brands fa-youtube"></i></a>
+              <a target='_blank' href='https://weibo.com/britishmuseumlondon'><i class="fa-brands fa-weibo"></i></a>
+              <a target='_blank' href='#'><i class="fa-brands fa-weixin"></i></a>
             </div>
           </div>
           <div className="col-6 footer__top__right">

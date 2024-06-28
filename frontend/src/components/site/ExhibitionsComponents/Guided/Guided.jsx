@@ -3,9 +3,7 @@ import './Guided.css'
 import Card from './Card'
 import MainContext from '../../../../context/context'
 
-const Guided = () => {
-
-    const { events } = useContext(MainContext)
+const Guided = ({ events }) => {
 
     return (
         <div className="guided">
@@ -17,9 +15,9 @@ const Guided = () => {
                 </div>
                 <div className="row guided__cards">
                     {
-                        events.filter(item => item.category === 'Guided tour').slice(0, 3).map(event => {
+                        events.filter(item => item.category === 'Guided tour').slice(0, 3).map((event, index) => {
                             return (
-                                <Card event={event} />
+                                <Card key={index} event={event} />
                             )
                         })
                     }

@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 import Cards from './Cards'
 import MainContext from '../../../../context/context'
 
-const Discover = () => {
-
-    const {exhibitions} = useContext(MainContext)
+const Discover = ({exhibitions}) => {
 
     return (
         <div className='discover'>

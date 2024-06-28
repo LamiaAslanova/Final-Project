@@ -1,16 +1,23 @@
-import React from 'react'
-import './CatCards.css'
-import photo from '../../../../assets/images/shopitem.jpg'
-import { Link } from 'react-router-dom'
-import Delivery from '../../ShopComponents/DeliveryInfo/Delivery'
+import React from 'react';
+import './CatCards.css';
+import { Link } from 'react-router-dom';
+import Delivery from '../../ShopComponents/DeliveryInfo/Delivery';
+import ShopCart from '../../ShopComponents/ShopCartLink/ShopCartLink';
 
-const CatCards = () => {
+const CatCards = ({ filteredProducts }) => {
   return (
     <div className="catCards">
+      <div className="custom-container shopCart__cont">
+        <div className="row shopCart__row">
+          <div className="col-8 shopCart__col">
+            <ShopCart />
+          </div>
+        </div>
+      </div>
       <div className="custom-container catCards__mini__cont">
         <div className="row catCards__mini__row">
           <div className="col-8 catCards__mini__col">
-            <Delivery/>
+            <Delivery />
           </div>
         </div>
       </div>
@@ -30,78 +37,29 @@ const CatCards = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <Link to='/shop-details' className="card__top">
-                    <img src={photo} alt="" />
-                  </Link>
-                  <div className="card-body card__bottom">
-                    <Link to='/shop-details'>Escape of Odysseus Vase</Link>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vase</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vase</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vase</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vase</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4 catCards__col4">
-                <div className="card single__card">
-                  <div className="card__top">
-                    <img src={photo} alt="" />
-                  </div>
-                  <div className="card-body card__bottom">
-                    <h4>Escape of Odysseus Vaseenkfjnewkj</h4>
-                    <p>$199.00</p>
-                  </div>
-                </div>
-              </div>
+              {
+                filteredProducts.map((product, index) => {
+                  return (
+                    <div key={index} className="col-4 catCards__col4">
+                      <div className="card single__card">
+                        <Link to={`/shop-details/${product._id}`} className="card__top">
+                          <img src={product.image} />
+                        </Link>
+                        <div className="card-body card__bottom">
+                          <Link to={`/shop-details/${product._id}`}>{product.title}</Link>
+                          <p>${product.price}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CatCards
+export default CatCards;

@@ -20,37 +20,37 @@ const Description = () => {
                     </div>
                     <div className="col-4 description__col4">
                         <div className="description__col4__piece" id='topmost'>
-                            <Link to='americas' smooth={true} duration={500}>
+                            <Link to='Americas' smooth={true} duration={500}>
                                 <span>Americas</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>
                         <div className="description__col4__piece">
-                            <Link>
+                            <Link to='Animals' smooth={true} duration={500}>
                                 <span>Animals</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>
                         <div className="description__col4__piece">
-                            <Link>
+                            <Link to='China' smooth={true} duration={500}>
                                 <span>China</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>
                         <div className="description__col4__piece">
-                            <Link>
+                            <Link to='Death and memory' smooth={true} duration={500}>
                                 <span>Death and memory</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>
                         <div className="description__col4__piece">
-                            <Link>
+                            <Link to='Africa' smooth={true} duration={500}>
                                 <span>Africa</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>
                         <div className="description__col4__piece" id='lowest'>
-                            <Link>
+                            <Link to='Egypt' smooth={true} duration={500}>
                                 <span>Egypt</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>

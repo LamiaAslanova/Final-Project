@@ -1,85 +1,264 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from "react";
+import TextField from "@mui/material/TextField";
+import { Button, IconButton, InputAdornment } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import Swal from "sweetalert2";
+import User from "../../../Classes/User";
+import userValidation from "../../../Validations/user.validation";
+import controller from "../../../Services/api/requests";
+import { endpoints } from "../../../Services/api/constants";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useDispatch, useSelector } from "react-redux";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import MainContext from "../../../context/context";
 import './SignUpPage.css'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
 
 const SignUpPage = () => {
+  const navigate = useNavigate('');
+  const [image, setImage] = useState(null)
+  const user = useSelector((state) => state.user)
+  const {
+    showPassword,
+    showConfirmPassword,
+    handleClickShowPassword,
+    handleClickShowConfirmPassword
+  } = useContext(MainContext);
 
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [userName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
-
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-    generateUsername(e.target.value, lastName);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-    generateUsername(firstName, e.target.value);
-  };
-
-  const generateUsername = (first, last) => {
-    if (first && last) {
-      setUserName(first + last);
+  useEffect(() => {
+    if (user.id) {
+      navigate('/')
     }
-  };
+  }, [navigate, user])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  function handleImageChange(event, setFieldValue) {
+    const file = event.currentTarget.files[0]
+    setImage(file)
+    setFieldValue('src', file)
+  }
 
-    axios.post('http://localhost:8080/signUp', { firstName, lastName, userName, email, password })
-      .then(res => {
-        console.log(res.data)
-        navigate('/sign-in')
-      })
-      .catch(error => console.log(error))
-  };
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      userName: "",
+      email: "",
+      password: "",
+      confirm__password: "",
+      src: "",
+      // role: "",
+    },
+    validationSchema: userValidation,
+    onSubmit: async ({ firstName, lastName, userName, email, password, src }, actions) => {
+      const formData = new FormData()
+      const newUser = new User(firstName, lastName, userName, email, password, src);
+      formData.append('firstName', newUser.firstName)
+      formData.append('lastName', newUser.lastName)
+      formData.append('userName', newUser.userName)
+      formData.append('email', newUser.email)
+      formData.append('password', newUser.password)
+      formData.append('src', newUser.src)
+      formData.append('isBanned', newUser.isBanned)
+      formData.append('banCount', newUser.banCount)
+      const response = await controller.post(endpoints.users, formData)
+      console.log(response)
+      if (response.error) {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: response.message,
+          showConfirmButton: false,
+          timer: 1000
+        })
+      }
+      else {
+        actions.resetForm();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User signed up successfully",
+          showConfirmButton: false,
+          timer: 1000
+        }).then(() => {
+          navigate('/sign-in');
+        });
+
+      }
+
+    },
+  });
+
+  useEffect(() => {
+    if (formik.values.firstName && formik.values.lastName) {
+      formik.setFieldValue('userName', `${formik.values.firstName} ${formik.values.lastName}`);
+    }
+  }, [formik.values.firstName, formik.values.lastName]);
 
   return (
-    <main>
-      <div className="signup__page">
-        <div className="custom-container signup__page__cont">
-          <div className="row signup__page__row">
-            <div className="col-8 signup__page__col">
-              <img src="https://emails.britishmuseum.org/files/cmi_dev/project_3562/logos/logo_black.png" alt="" />
-              <h2>Email preferences</h2>
-              <h3>Sign up to receive news, stories and offers from the British Museum</h3>
-              <p>Please enter your details to sign up to our emails.</p>
-              <span>* denotes required fields</span>
-              <form onSubmit={handleSubmit}>
-                <div class="mb-3">
-                  <label for="first__name" class="form-label">First name *</label>
-                  <input type="text" class="form-control" id="first__name" value={firstName} onChange={handleFirstNameChange} />
-                </div>
-                <div class="mb-3">
-                  <label for="last__name" class="form-label">Last name *</label>
-                  <input type="text" class="form-control" id="last__name" value={lastName} onChange={handleLastNameChange} />
-                </div>
-                <div class="mb-3">
-                  <label for="user__name" class="form-label">User Name</label>
-                  <input type="text" class="form-control" id="user__name" value={userName} readOnly />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email *</label>
-                  <input type="text" class="form-control" id="email" onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Password *</label>
-                  <input type="password" class="form-control" id="password" onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <p>Have you been account? <Link to='/sign-in'>Sign in</Link></p>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
+    <div className="signUpPage">
+      <div className="custom-container signUpPage__title__cont">
+        <div className="row signUpPage__title__row">
+          <div className="col-6 signUpPage__title__col">
+            <img src="https://emails.britishmuseum.org/files/cmi_dev/project_3562/logos/logo_black.png" alt="" />
+            <h3>Email preferences</h3>
+            <h4>Sign up to receive news, stories and offers from the British Museum</h4>
+            <p>Please enter your details to sign up to our emails.</p>
+            <span>* denotes required fields</span>
           </div>
         </div>
       </div>
-    </main>
-  )
-}
+      <div className="custom-container signUpPage__cont">
+        <div className="row signUpPage__row">
+          <div className="col-6 signUpPage__col" style={{margin: "0 auto"}}>
+            <form
+              onSubmit={formik.handleSubmit}
+            >
+              <TextField
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="firstName"
+                label="First name"
+                type="text"
+                variant="outlined"
+                required
+              />
+              {formik.touched.firstName && formik.errors.firstName && (
+                <span style={{color: "red"}}>{formik.errors.firstName}</span>
+              )}
+              <TextField
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="lastName"
+                label="Last name"
+                type="text"
+                variant="outlined"
+                required
+              />
+              {formik.touched.lastName && formik.errors.lastName && (
+                <span style={{color: "red"}}>{formik.errors.lastName}</span>
+              )}
+              {/* <TextField
+          value={formik.values.userName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          name="userName"
+          label="User name"
+          type="text"
+          variant="outlined"
+          required
+        />
+        {formik.touched.userName && formik.errors.userName && (
+          <span >{formik.errors.userName}</span>
+        )} */}
+              <TextField
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="email"
+                label="Email"
+                type="email"
+                variant="outlined"
+                required
+              />
+              {formik.touched.email && formik.errors.email && (
+                <span style={{color: "red"}}>{formik.errors.email}</span>
+              )}
+              <TextField
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="password"
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                variant="outlined"
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              {formik.touched.password && formik.errors.password && (
+                <span style={{color: "red"}}>{formik.errors.password}</span>
+              )}
+              <TextField
+                value={formik.values.confirm__password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="confirm__password"
+                label="Confirm password"
+                type={showConfirmPassword ? "text" : "password"}
+                variant="outlined"
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowConfirmPassword}
+                        edge="end"
+                      >
+                        {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              {formik.touched.confirm__password &&
+                formik.errors.confirm__password && (
+                  <span style={{color: "red"}}>
+                    {formik.errors.confirm__password}
+                  </span>
+                )}
+              <TextField
+                onChange={(event) => {
+                  handleImageChange(event, formik.setFieldValue)
+                }}
+                onBlur={formik.handleBlur}
+                name="src"
+                type="file"
+                variant="outlined"
+                required
+              />
+              {formik.touched.src && formik.errors.src && (
+                <span style={{color: "red"}}>{formik.errors.src}</span>
+              )}
+              {/* <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Role</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            onBlur={formik.handleBlur}
+            value={formik.values.role}
+            onChange={formik.handleChange}
+            label="Role"
+            name="role"
+          >
+            <MenuItem value={"client"}>Client</MenuItem>
+          </Select>
+        </FormControl> */}
+              <Link to={"/sign-in"}>Do you have an account?</Link>
+              <Button className="signUp__submit" type="submit" variant="contained" color="primary">Submit</Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default SignUpPage
+export default SignUpPage;

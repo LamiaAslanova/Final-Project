@@ -2,7 +2,6 @@
     background-color: black;
 
     .allEx__cont {
-        border-bottom: 1px solid #4a4a4a;
         padding: 60px 0px;
 
         .allEx__title__row {
@@ -53,6 +52,64 @@
         }
     }
 
+    .results {
+        background-color: white;
+
+        .results__cont {
+
+            .results__row {
+
+                .results__col {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 25px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+
+                    p {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        color: black;
+                    }
+
+                    a {
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 28px;
+                        color: black;
+
+                        span {
+                            position: relative;
+                        }
+
+                        span::before {
+                            position: absolute;
+                            content: "";
+                            bottom: -1px;
+                            left: 50%;
+                            width: 0;
+                            height: 2px;
+                            background-color: black;
+                            transition: all linear 0.3s;
+                            transform-origin: center;
+                        }
+
+                        span:hover::before {
+                            left: 0;
+                            width: 100%;
+                        }
+
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .allEx__cards__cont {
         padding: 60px 0px;
 
@@ -87,21 +144,42 @@
                         }
 
                         .card__top__bottom {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            width: 100%;
 
-                            div {
-                                font-size: 14px;
-                                font-weight: 500;
-                                line-height: 21.7px;
-                                letter-spacing: 0;
-                                color: black;
-                                background-color: white;
-                                width: 86px;
-                                height: 86px;
+                            .card__top__bottom__left {
                                 display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                border-radius: 50%;
-                                margin-top: 20px;
+                                flex-direction: column;
+                                gap: 8px;
+
+                                p {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 21.7px;
+                                    letter-spacing: 0;
+                                    color: white;
+                                }
+                            }
+
+                            .card__top__bottom__right {
+
+                                div {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 21.7px;
+                                    letter-spacing: 0;
+                                    color: black;
+                                    background-color: white;
+                                    width: 86px;
+                                    height: 86px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 50%;
+                                    margin-top: 20px;
+                                }
                             }
                         }
                     }

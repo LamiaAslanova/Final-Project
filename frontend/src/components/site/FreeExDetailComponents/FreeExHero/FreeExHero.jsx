@@ -1,6 +1,7 @@
 import React from 'react'
 import './FreeExHero.css'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const FreeExHero = ({ item }) => {
   return (
@@ -11,7 +12,11 @@ const FreeExHero = ({ item }) => {
             <div className="col-12 freeExHero__col">
               <div className="freeExHero__content">
                 <h1>{item.title}</h1>
-                <span>Exhibition / {item.date}</span>
+                <span className='freeExHero__content__span'>Exhibition / {item.date}</span>
+                <ScrollLink to='freeExBody' smooth={true} duration={500}>
+                  <span>Book now</span>
+                  <i class="fa-solid fa-circle-chevron-right"></i>
+                </ScrollLink>
               </div>
             </div>
           </div>
@@ -22,17 +27,17 @@ const FreeExHero = ({ item }) => {
           <div className="row freeExHero__mini__row">
             <div className="col-12 freeExHero__mini__col">
               <div className="freeExHero__mini__left">
-                <Link to='/'>Home</Link>
+                <RouterLink to='/'>Home</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
-                <Link to='exhibitions'>Exhibitions and events</Link>
+                <RouterLink to='exhibitions'>Exhibitions and events</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
                 <p>{item.title}</p>
               </div>
               <div className="freeExHero__mini__right">
                 <p>Share the page</p>
                 <ul>
-                  <li><Link><i class="fa-brands fa-facebook-f"></i></Link></li>
-                  <li><Link><i class="fa-brands fa-x-twitter"></i></Link></li>
+                  <li><RouterLink><i class="fa-brands fa-facebook-f"></i></RouterLink></li>
+                  <li><RouterLink><i class="fa-brands fa-x-twitter"></i></RouterLink></li>
                 </ul>
               </div>
             </div>

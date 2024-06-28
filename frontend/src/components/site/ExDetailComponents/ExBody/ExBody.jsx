@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ExBody.css'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const ExBody = ({item}) => {
+const ExBody = ({ item }) => {
+
+    const { addToCart } = useContext(MainContext)
+
     return (
-        <div className="exBody">
+        <div id="exBody">
             <div className="custom-container exBody__cont">
                 <div className="row exBody__row">
                     <div className="col-8 exBody__col8">
                         <h3>{item.desc}</h3>
-                        <p style={{whiteSpace: 'pre-wrap'}}>{item.additionalDesc}</p>
+                        <p style={{ whiteSpace: 'pre-wrap' }}>{item.additionalDesc}</p>
                     </div>
                     <div className="col-4 exBody__col4">
                         <div className="exBody__col4__piece" id='topmost'>
@@ -41,8 +45,8 @@ const ExBody = ({item}) => {
                             </div>
                         </div>
                         <div className="exBody__col4__button">
-                            <Link>
-                                <span>Book tickets</span>
+                            <Link onClick={() => { addToCart(item) }}>
+                                <span>Add to cart</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </Link>
                         </div>

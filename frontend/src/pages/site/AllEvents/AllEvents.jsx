@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import './AllEvents.css'
 import Card from './Card'
 import MainContext from '../../../context/context'
+import { Link } from 'react-router-dom'
 
 const AllEvents = () => {
 
-    const {events, setEvents} = useContext(MainContext)
+    const {events, shuffleArray} = useContext(MainContext)
 
   return (
     <div className="allEv">
@@ -20,10 +21,23 @@ const AllEvents = () => {
                     </div>
                 </div>
             </div>
+            <div className="results">
+                <div className="custom-container results__cont">
+                    <div className="row results__row">
+                        <div className="col-12 results__col">
+                            <p>Showing results for:</p>
+                            <Link to='/exhibitions-events'>
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                <span>All events</span>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="custom-container allEv__cards__cont">
                 <div className="row allEv__cards">
                     {
-                        events.map((event, index) => {
+                        shuffleArray(events).map((event, index) => {
                             return(
                                 <Card key={index} event={event} />
                             )

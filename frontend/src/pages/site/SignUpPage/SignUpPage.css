@@ -1,14 +1,81 @@
-.signup__page{
+.signUpPage{
+    padding: 80px 0;
 
-    .signup__page__cont{
+    .signUpPage__title__cont{
 
-        .signup__page__row{
+        .signUpPage__title__row{
 
-            .signup__page__col{
+            .signUpPage__title__col{
                 margin: 0 auto;
 
                 img{
                     width: 170px;
+                    margin-bottom: 40px;
+                }
+
+                h3{
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: normal;
+                    color: black;
+                    margin-bottom: 20px;
+                }
+
+                h4{
+                    font-size: 17.3px;
+                    font-weight: 500;
+                    line-height: normal;
+                    color: black;
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    font-size: 13.3px;
+                    font-weight: 400;
+                    line-height: 21.3px;
+                    color: black;
+                    margin-bottom: 15px;
+                }
+                
+                span{
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: normal;
+                    color: black;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .signUpPage__cont{
+
+        .signUpPage__row{
+
+            .signUpPage__col{
+
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 100%;
+                    margin-top: 25px;
+
+                    div{
+
+                        button{
+                            padding-right: 14px;
+                        }
+                    }
+
+                    a{
+                        margin-left: auto;
+                    }
+
+                    .signUp__submit{
+                        width: 150px;
+                        margin-left: auto;
+                    }
                 }
             }
         }

@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './FreeExBody.css'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const FreeExBody = ({item}) => {
-  return (
-    <div className="freeExBody">
+const FreeExBody = ({ item }) => {
+
+    const { addToCart } = useContext(MainContext)
+
+    return (
+        <div id="freeExBody">
             <div className="custom-container freeExBody__cont">
                 <div className="row freeExBody__row">
                     <div className="col-8 freeExBody__col8">
                         <h3>{item.desc}</h3>
-                        <p style={{whiteSpace: 'pre-wrap'}}>{item.additionalDesc}</p>
+                        <p style={{ whiteSpace: 'pre-wrap' }}>{item.additionalDesc}</p>
                     </div>
                     <div className="col-4 freeExBody__col4">
                         <div className="freeExBody__col4__piece" id='topmost'>
@@ -36,11 +40,17 @@ const FreeExBody = ({item}) => {
                                 <p>{item.category}</p>
                             </div>
                         </div>
+                        <div className="freeExBody__col4__button">
+                            <Link onClick={() => { addToCart(item) }}>
+                                <span>Add to cart</span>
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default FreeExBody

@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Photo1 from '../../../../assets/images/americas.jpg'
 import { Link } from 'react-router-dom'
-import legion from  '../../../../assets/images/Legion.jpg'
+import legion from '../../../../assets/images/Legion.jpg'
 
-const Americas = () => {
+const Americas = ({ items }) => {
     var settings = {
         dots: true,
         infinite: false,
@@ -56,37 +56,33 @@ const Americas = () => {
     };
 
     return (
-        <div id="americas">
+        <div className="americas">
             <div className="custom-container americas__cont">
                 <div className="row americas__title">
                     <div className="col-12 americas__title__col">
-                        <h2>Americas</h2>
+                        {
+                            items.slice(0,1).map((item, index) => {
+                                return (
+                                    <h2 id={item.category} key={index}>{item.category}</h2>
+                                )
+                            })
+                        }
                         <p>1/10</p>
                     </div>
                 </div>
             </div>
             <div className="slider-container">
                 <Slider {...settings}>
-                    <div className='single__carousel'>
-                        <img src={Photo1} alt="" />
-                        <h3>Egypt</h3>
-                    </div>
-                    <div className='single__carousel'>
-                        <img src={legion} alt="" />
-                        <h3>Egypt</h3>
-                    </div>
-                    <div className='single__carousel'>
-                        <img src={Photo1} alt="" />
-                        <h3>Egypt</h3>
-                    </div>
-                    <div className='single__carousel'>
-                        <img src={Photo1} alt="" />
-                        <h3>Egypt</h3>
-                    </div>
-                    <div className='single__carousel'>
-                        <img src={Photo1} alt="" />
-                        <h3>Egypt</h3>
-                    </div>
+                    {
+                        items.map((item, index) => {
+                            return (
+                                <div key={index} className='single__carousel'>
+                                    <img src={item.image} alt="" />
+                                    <h3>{item.title}</h3>
+                                </div>
+                            )
+                        })
+                    }
                 </Slider>
             </div>
         </div>

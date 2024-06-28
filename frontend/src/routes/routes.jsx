@@ -1,3 +1,4 @@
+import { element } from "prop-types";
 import AddCollection from "../pages/admin/AddCollection/AddCollection";
 import AddEvent from "../pages/admin/AddEvent/AddEvent";
 import AddExhibition from "../pages/admin/AddExhibition/AddExhibition";
@@ -19,9 +20,11 @@ import Home from "../pages/site/Home/Home";
 import Shop from "../pages/site/Shop/Shop";
 import ShopCategory from "../pages/site/ShopCategory/ShopCategory";
 import ShopDetail from "../pages/site/ShopDetail/ShopDetail";
-import SignInPage from "../pages/site/SignUpPage/SignInPage";
+import SignInPage from "../pages/site/SignInPage/SignInPage";
 import SignUpPage from "../pages/site/SignUpPage/SignUpPage";
 import SiteRoot from "../pages/site/SiteRoot";
+import User from "../pages/site/User/User";
+import ShopBasket from "../pages/site/ShopBasket/ShopBasket";
 
 const ROUTES = [
     {
@@ -41,11 +44,11 @@ const ROUTES = [
                 element: <Shop/>
             },
             {
-                path: "/exhibition-details/:id",
+                path: "exhibition-details/:id",
                 element: <ExhibitionDetail/>
             },
             {
-                path: "/free-exhibition-details/:id",
+                path: "free-exhibition-details/:id",
                 element: <FreeExhibitionDetail/>
             },
             {
@@ -53,7 +56,7 @@ const ROUTES = [
                 element: <EventDetail/>
             },
             {
-                path: "/shop-category",
+                path: "shop-category/:category",
                 element: <ShopCategory/>
             },
             {
@@ -61,28 +64,36 @@ const ROUTES = [
                 element: <Collection/>
             },
             {
-                path: "/sign-up",
-                element: <SignUpPage/>
-            },
-            {
-                path: "/sign-in",
-                element: <SignInPage/>
-            },
-            {
-                path: "/basket",
+                path: "basket",
                 element: <Basket/>
             },
             {
-                path: "/shop-details",
+                path: "shop-details/:id",
                 element: <ShopDetail/>
             },
             {
-                path: "/all-exhibitions",
+                path: "all-exhibitions",
                 element: <AllExhibitions/>
             },
             {
-                path: "/all-events",
+                path: "all-events",
                 element: <AllEvents/>
+            },
+            {
+                path: "sign-up",
+                element: <SignUpPage/>
+            },
+            {
+                path: "sign-in",
+                element: <SignInPage/>
+            },
+            {
+                path: "user",
+                element: <User/>
+            },
+            {
+                path: "shop-cart",
+                element: <ShopBasket/>
             }
         ]
     },

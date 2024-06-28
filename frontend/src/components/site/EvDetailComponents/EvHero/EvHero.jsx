@@ -1,6 +1,7 @@
 import React from 'react'
 import './EvHero.css'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const EvHero = ({item}) => {
   return (
@@ -12,10 +13,10 @@ const EvHero = ({item}) => {
               <div className="evHero__content">
                 <h1>{item.title}</h1>
                 <span className='evHero__content__span'>{item.type} / {item.date}</span>
-                <Link>
-                  <span>Book tickets</span>
+                <ScrollLink to='evBody' smooth={true} duration={500}>
+                  <span>Book now</span>
                   <i class="fa-solid fa-circle-chevron-right"></i>
-                </Link>
+                </ScrollLink>
               </div>
             </div>
           </div>
@@ -26,17 +27,17 @@ const EvHero = ({item}) => {
           <div className="row evHero__mini__row">
             <div className="col-12 evHero__mini__col">
               <div className="evHero__mini__left">
-                <Link to='/'>Home</Link>
+                <RouterLink to='/'>Home</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
-                <Link to='exhibitions'>Exhibitions and events</Link>
+                <RouterLink to='exhibitions'>Exhibitions and events</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
                 <p>{item.title}</p>
               </div>
               <div className="evHero__mini__right">
                 <p>Share the page</p>
                 <ul>
-                  <li><Link><i class="fa-brands fa-facebook-f"></i></Link></li>
-                  <li><Link><i class="fa-brands fa-x-twitter"></i></Link></li>
+                  <li><RouterLink><i class="fa-brands fa-facebook-f"></i></RouterLink></li>
+                  <li><RouterLink><i class="fa-brands fa-x-twitter"></i></RouterLink></li>
                 </ul>
               </div>
             </div>

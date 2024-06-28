@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const { config } = require('dotenv')
 const ExhibitionsRouter = require('./routes/Exhibition.routes')
 const EventsRouter = require('./routes/Event.routes')
 const CollectionsRouter = require('./routes/Collection.routes')
@@ -17,9 +16,8 @@ app.use('/exhibitions', ExhibitionsRouter)
 app.use('/events', EventsRouter)
 app.use('/collections', CollectionsRouter)
 app.use('/shop', ShopRouter)
-app.use('/signUp', UserRouter)
-app.use('/signIn', UserRouter)
 app.use('/uploads', express.static('./uploads'))
+app.use(UserRouter)
 
 mongoose.connect(process.env.CONNECTION__STRING)
     .then(res => {

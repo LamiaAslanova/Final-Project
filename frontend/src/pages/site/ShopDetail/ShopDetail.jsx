@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import $ from 'jquery';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
@@ -7,6 +7,11 @@ import './ShopDetail.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Delivery from '../../../components/site/ShopComponents/DeliveryInfo/Delivery';
+import { useParams } from 'react-router';
+import axios from 'axios';
+import ShopCart from '../../../components/site/ShopComponents/ShopCartLink/ShopCartLink';
+import MainContext from '../../../context/context';
+import { Link } from 'react-router-dom';
 
 const ShopDetail = () => {
     useEffect(() => {
@@ -23,8 +28,26 @@ const ShopDetail = () => {
         });
     }, []);
 
+    const [item, setItem] = useState({})
+    const { id } = useParams()
+    const { addToShopCart } = useContext(MainContext)
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/shop/${id}`)
+            .then(res => {
+                setItem(res.data)
+            })
+    }, [])
+
     return (
         <div className="shopdet">
+            <div className="custom-container shopCart__cont">
+                <div className="row shopCart__row">
+                    <div className="col-10 shopCart__col">
+                        <ShopCart />
+                    </div>
+                </div>
+            </div>
             <div className="custom-container shopdet__mini__cont">
                 <div className="row shopdet__mini__row">
                     <div className="col-10 shopdet__mini__col">
@@ -35,10 +58,12 @@ const ShopDetail = () => {
             <div className="custom-container shopdet__heading__cont">
                 <div className="row shopdet__heading__row">
                     <div className="col-10 shopdet__path">
-                        <p>Home / Ancient Greek Crested Helmet Replica</p>
+                        <Link to='/shop'>Home</Link>
+                        <span>/</span>
+                        <p>{item.title}</p>
                     </div>
                     <div className="col-10 shopdet__title">
-                        <h2>Ancient Greek Crested Helmet Replica</h2>
+                        <h2>{item.title}</h2>
                     </div>
                 </div>
             </div>
@@ -50,10 +75,10 @@ const ShopDetail = () => {
                                 <div className="layout">
                                     <ul className="slider">
                                         <li>
-                                            <img src="https://www.britishmuseumshoponline.org/media/catalog/product/cache/0e0b3404d45a002a230fc8c89fb631e6/n/5/n551230_1_ancient_greek_crested_helmet_replica.jpg" alt="" />
+                                            <img src={item.image} />
                                         </li>
                                         <li>
-                                            <img src="https://www.britishmuseumshoponline.org/media/catalog/product/cache/0e0b3404d45a002a230fc8c89fb631e6/n/5/n551230_1_ancient_greek_crested_helmet_replica.jpg" alt="" />
+                                            <img src={item.additionalImage} />
                                         </li>
                                     </ul>
                                 </div>
@@ -64,23 +89,17 @@ const ShopDetail = () => {
                                     </TabList>
 
                                     <TabPanel>
-                                        <p>An impressive home ornament inspired by ancient Greek helmets.
-
-                                            The piece is crafted in Greece from brass finished with a gold-coloured stand and a marble base. A green-coloured patina gives the ornament an aged appearance, imitating historical objects as they would now appear.
-
-                                            The ornament celebrates the striking armour worn by soldiers in ancient Greek armies. This example features two cheek pieces for maximum protection and is finished with ornate, swirling decoration and a large plume based on the horsehair embellishments often found on ancient armour.
-
-                                            A fabulous piece for lovers of military history.</p>
+                                        <p>{item.about}</p>
                                     </TabPanel>
                                     <TabPanel>
                                         <div className="row tabpanel__row">
                                             <div className="col-6 tabpanel__col">
-                                                <span>DIMENSIONS:</span>
-                                                <p>H28.5 x W9.5 x L16cm</p>
+                                                <span>WEIGHT:</span>
+                                                <p>{item.weight}</p>
                                             </div>
                                             <div className="col-6 tabpanel__col">
                                                 <span>DIMENSIONS:</span>
-                                                <p>H28.5 x W9.5 x L16cm</p>
+                                                <p>{item.dimensions}</p>
                                             </div>
                                         </div>
                                     </TabPanel>
@@ -88,7 +107,7 @@ const ShopDetail = () => {
                             </div>
                             <div className="col-3 det__right">
                                 <div className="det__content">
-                                    <h2>$145.00</h2>
+                                    <h2>${item.price}</h2>
                                     <div className="quantity">
                                         <div className="quantity__title">
                                             <p>Quantity</p>
@@ -99,7 +118,7 @@ const ShopDetail = () => {
                                             <button><i class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
-                                    <button className='addtobasket__button'>Add to basket</button>
+                                    <button onClick={() => { addToShopCart(item) }} className='addtobasket__button'>Add to basket</button>
                                     <div class="accordion" id="accordionExample">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">

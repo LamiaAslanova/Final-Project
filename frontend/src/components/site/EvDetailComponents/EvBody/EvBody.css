@@ -1,4 +1,4 @@
-.evBody {
+#evBody {
     padding: 60px 0px;
     background-color: black;
 
@@ -91,6 +91,8 @@
                         justify-content: space-between;
                         align-items: center;
                         margin-top: 20px;
+                        border: 1px solid white;
+                        transition: 0.3s;
 
                         span {
                             font-size: 18px;
@@ -103,6 +105,18 @@
                         i {
                             color: black;
                             font-size: 18px;
+                        }
+                    }
+
+                    a:hover{
+                        background-color: black;
+
+                        span{
+                            color: white;
+                        }
+
+                        i{
+                            color: white;
                         }
                     }
                 }

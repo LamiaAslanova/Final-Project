@@ -3,9 +3,7 @@ import './Free.css'
 import Card from './Card'
 import MainContext from '../../../../context/context'
 
-const Free = () => {
-
-    const { exhibitions } = useContext(MainContext)
+const Free = ({exhibitions}) => {
 
     return (
         <div className="free">
@@ -17,9 +15,9 @@ const Free = () => {
                 </div>
                 <div className="row free__cards">
                 {
-                        exhibitions.filter(item => item.category === 'Free').slice(0, 3).map(exhibition => {
+                        exhibitions.filter(item => item.category === 'Free').slice(0, 3).map((exhibition, index) => {
                             return (
-                                <Card exhibition={exhibition} />
+                                <Card key={index} exhibition={exhibition} />
                             )
                         })
                     }

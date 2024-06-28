@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Explore.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Photo1 from '../../../../assets/images/Photo4-1.png'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const Explore = () => {
+const Explore = ({ collections }) => {
+
+    const {shuffleArray} = useContext(MainContext)
 
     var settings = {
         dots: true,
@@ -60,32 +63,22 @@ const Explore = () => {
                 <div className="row explore__title">
                     <div className="col-12 explore__title__col">
                         <h2>Explore the collection</h2>
-                        <Link to='collection' className='see__all'>See all<i class="fa-solid fa-circle-chevron-right"></i></Link>
+                        <Link to='collection' className='see__all'><p>See all</p><i class="fa-solid fa-circle-chevron-right"></i></Link>
                     </div>
                 </div>
             </div>
             <div className="slider-container">
                 <Slider {...settings}>
-                    <div className='single__item'>
-                        <h3>Egypt</h3>
-                        <img src={Photo1} alt="" />
-                    </div>
-                    <div className='single__item'>
-                        <h3>Egypt</h3>
-                        <img src={Photo1} alt="" />
-                    </div>
-                    <div className='single__item'>
-                        <h3>Egypt</h3>
-                        <img src={Photo1} alt="" />
-                    </div>
-                    <div className='single__item'>
-                        <h3>Egypt</h3>
-                        <img src={Photo1} alt="" />
-                    </div>
-                    <div className='single__item'>
-                        <h3>Egypt</h3>
-                        <img src={Photo1} alt="" />
-                    </div>
+                    {
+                        shuffleArray(collections).map((collection, index) => {
+                            return (
+                                <div key={index} className='single__item'>
+                                    <h3>{collection.category}</h3>
+                                    <img src={collection.image} alt="" />
+                                </div>
+                            )
+                        })
+                    }
                 </Slider>
             </div>
             <Link to='collection' className='see__all__button'>

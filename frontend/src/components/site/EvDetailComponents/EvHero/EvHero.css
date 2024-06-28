@@ -15,12 +15,12 @@
         .evHero__cont {
 
             .evHero__row {
-                
+
                 .evHero__col {
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
-                    
+
                     .evHero__content {
                         display: flex;
                         flex-direction: column;
@@ -55,6 +55,9 @@
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
+                            border: 1px solid white;
+                            transition: 0.3s;
+                            cursor: pointer;
 
                             span {
                                 font-size: 18px;
@@ -67,6 +70,18 @@
                             i {
                                 color: black;
                                 font-size: 18px;
+                            }
+                        }
+
+                        a:hover {
+                            background-color: black;
+
+                            span {
+                                color: white;
+                            }
+
+                            i {
+                                color: white;
                             }
                         }
 
@@ -101,6 +116,24 @@
                             font-weight: 400;
                             line-height: 28px;
                             color: white;
+                            position: relative;
+                        }
+
+                        a::before {
+                            position: absolute;
+                            content: "";
+                            bottom: 2px;
+                            left: 0;
+                            width: 100%;
+                            height: 1.5px;
+                            background-color: white;
+                            transition: all linear 0.3s;
+                            transform-origin: center;
+                        }
+
+                        a:hover::before {
+                            left: 50%;
+                            width: 0;
                         }
 
                         i {
@@ -150,6 +183,11 @@
                                     width: 50px;
                                     height: 50px;
                                     border-radius: 50%;
+                                    transition: 0.3s;
+                                }
+
+                                a:hover{
+                                    opacity: 0.7;
                                 }
                             }
                         }

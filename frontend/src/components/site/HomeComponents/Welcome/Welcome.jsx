@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Welcome.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Photo1 from '../../../../assets/images/Photo5-1.jpg'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../context/context'
 
-const Welcome = () => {
+const Welcome = ({ shop }) => {
+
+    const {shuffleArray} = useContext(MainContext)
+
     var settings = {
         dots: true,
         infinite: false,
@@ -59,32 +63,22 @@ const Welcome = () => {
                 <div className="row welcome__title">
                     <div className="col-12 welcome__title__col">
                         <h2>Welcome to the British Museum Shop</h2>
-                        <Link to='shop' className='shop__now'>Shop now<i class="fa-solid fa-circle-chevron-right"></i></Link>
+                        <Link to='shop' className='shop__now'><p>Shop now</p><i class="fa-solid fa-circle-chevron-right"></i></Link>
                     </div>
                 </div>
             </div>
             <div className="slider-container">
                 <Slider {...settings}>
-                    <div className='single__item'>
-                        <img src={Photo1} alt="" />
-                        <h3>Inspired by the Museum</h3>
-                    </div>
-                    <div className='single__item'>
-                        <img src={Photo1} alt="" />
-                        <h3>Inspired by the Museum</h3>
-                    </div>
-                    <div className='single__item'>
-                        <img src={Photo1} alt="" />
-                        <h3>Inspired by the Museum</h3>
-                    </div>
-                    <div className='single__item'>
-                        <img src={Photo1} alt="" />
-                        <h3>Inspired by the Museum</h3>
-                    </div>
-                    <div className='single__item'>
-                        <img src={Photo1} alt="" />
-                        <h3>Inspired by the Museum</h3>
-                    </div>
+                    {
+                        shuffleArray(shop).map((product, index) => {
+                            return (
+                                <div key={index} className='single__item'>
+                                    <img src={product.image} alt="" />
+                                    <h3>{product.title}</h3>
+                                </div>
+                            )
+                        })
+                    }
                 </Slider>
             </div>
             <Link to='shop' className='shop__now__button'>

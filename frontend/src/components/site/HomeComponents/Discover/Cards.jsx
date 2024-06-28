@@ -9,14 +9,14 @@ const Cards = ({ exhibitions }) => {
             <div className="row discover__bottom__title">
                 <div className="col-12 discover__bottom__title__col">
                     <h2>Exhibitions and events</h2>
-                    <Link to='exhibitions-events' className='see__ex'>See all exhibitions and events<i class="fa-solid fa-circle-chevron-right"></i></Link>
+                    <Link to='exhibitions-events' className='see__ex'><p>See all exhibitions and events</p><i class="fa-solid fa-circle-chevron-right"></i></Link>
                 </div>
             </div>
             <div className="row discover__bottom__cards">
                 {
-                    exhibitions.filter(item => item.category === 'Special').slice(0, 2).map(exhibition => {
+                    exhibitions.filter(item => item.category === 'Special').slice(0, 2).map((exhibition, index) => {
                         return (
-                            <Card exhibition={exhibition} />
+                            <Card key={index} exhibition={exhibition} />
                         )
                     })
                 }

@@ -7,6 +7,7 @@ import photo1 from '../../../../assets/images/Mick.jpg'
 import photo2 from '../../../../assets/images/Legion.jpg'
 import photo3 from '../../../../assets/images/cat.jpg'
 import Delivery from '../DeliveryInfo/Delivery'
+import ShopCart from '../ShopCartLink/ShopCartLink'
 
 const Top = () => {
   const settings = {
@@ -22,6 +23,13 @@ const Top = () => {
 
   return (
     <div className="top">
+      <div className="custom-container shopCart__cont">
+        <div className="row shopCart__row">
+          <div className="col-12 shopCart__col">
+            <ShopCart />
+          </div>
+        </div>
+      </div>
       <div className="custom-container top__mini__cont">
         <div className="row top__mini__row">
           <div className="col-12 top__mini__col">

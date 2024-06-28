@@ -28,10 +28,10 @@ const Card = ({event}) => {
                         <div className="card__bottom__bottom">
                             <h3>{event.title}</h3>
                             <p>{event.miniDesc}</p>
-                            <Link>
+                            <div className='card__bottom__bottom__book'>
                                 <span>Book now</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
