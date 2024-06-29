@@ -32,12 +32,27 @@
             .col-8 {
 
                 .row {
+                    margin-bottom: 30px;
 
-                    .catCards__col12 {
+                    .catCards__col__left{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        input{
+                            padding: 4px 25px 5px 10px;
+                            border: 1px solid #ccc;
+                            height: 44px;
+                            font-size: 16px;
+                            line-height: 22.9px;
+                            color: #333333;
+                        }
+                    }
+
+                    .catCards__col__right {
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
-                        margin-bottom: 30px;
 
                         p {
                             margin-right: 20px;

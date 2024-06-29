@@ -22,7 +22,7 @@ const CollectionsController = {
     },
     add: async (req, res) => {
         try {
-            const newItem = new Collections({ ...req.body })
+            const newItem = new Collections({ ...req.body, image: 'http://localhost:8080/uploads/' + req.file.filename })
             await newItem.save()
             const allItems = await Collections.find()
             res.send(allItems)

@@ -199,30 +199,31 @@
                                 }
                             }
                         }
+                    }
 
-                        .react-tabs {
-                            width: 95%;
+                    .tabs {
+                        width: 95%;
 
-                            .react-tabs__tab-list {
-                                border-color: #ddd;
+                        .nav-tabs {
 
-                                .react-tabs__tab {
+                            .nav-item {
+
+                                .nav-link {
+                                    color: black;
+                                    border-radius: 0;
+                                    background: none;
                                     padding: 9px 25px;
                                     font-size: 17px;
                                     font-weight: 500;
                                     line-height: 22.9px;
-                                    color: black;
-                                }
-
-                                .react-tabs__tab--selected {
-                                    border-color: #ddd;
-                                    border-radius: 0;
-                                    background-color: #f5f5f5;
                                 }
                             }
+                        }
 
-                            .react-tabs__tab-panel {
-                                margin-top: 40px;
+                        .tab-content {
+
+                            .tab-pane {
+                                margin-top: 35px;
 
                                 p {
                                     font-size: 16px;
@@ -232,9 +233,9 @@
                                     letter-spacing: 0.6px;
                                 }
 
-                                .tabpanel__row {
+                                .tabpane__row {
 
-                                    .tabpanel__col {
+                                    .tabpane__col {
 
                                         span {
                                             font-size: 13.5px;
@@ -330,7 +331,7 @@
                                 transition: 0.3s;
                             }
 
-                            .addtobasket__button:hover{
+                            .addtobasket__button:hover {
                                 background-color: white;
                                 color: black;
                             }

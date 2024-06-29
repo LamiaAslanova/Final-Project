@@ -10,16 +10,31 @@ const AddCollection = () => {
 
   return (
     <div className="add__co">
-        <div className="container add__co__cont">
+      <div className="container add__co__cont">
         <Formik
           initialValues={{ title: '', image: '', category: '' }}
           validate={values => { }}
-          onSubmit={(values, { setSubmitting }) => {
-            axios.post('http://localhost:8080/collections', { ...values })
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            const formData = new FormData();
+            Object.keys(values).forEach(key => {
+              formData.append(key, values[key]);
+            });
+
+            axios.post('http://localhost:8080/collections', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
               .then(res => {
-                setCollections([...res.data])
-                console.log(res.data)
+                setCollections(res.data);
+                // resetForm();
               })
+              .catch(err => {
+                console.error(err);
+              })
+              .finally(() => {
+                setSubmitting(false);
+              });
           }}
         >
           {({
@@ -29,6 +44,7 @@ const AddCollection = () => {
             handleChange,
             handleBlur,
             handleSubmit,
+            setFieldValue,
             isSubmitting,
             /* and other goodies */
           }) => (
@@ -43,12 +59,13 @@ const AddCollection = () => {
                   value={values.title}
                 />
                 <input
-                  type="text"
+                  type="file"
                   name="image"
                   placeholder='Image'
-                  onChange={handleChange}
+                  onChange={(event) => {
+                    setFieldValue("image", event.currentTarget.files[0]);
+                  }}
                   onBlur={handleBlur}
-                  value={values.image}
                 />
                 <input
                   type="text"
@@ -58,7 +75,7 @@ const AddCollection = () => {
                   onBlur={handleBlur}
                   value={values.category}
                 />
-                <button type="submit" onsubmit={onsubmit}>
+                <button type="submit" disabled={isSubmitting}>
                   Submit
                 </button>
               </div>

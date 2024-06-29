@@ -8,8 +8,7 @@ import MainContext from '../../../context/context'
 
 const Exhibitions = () => {
 
-  const{exhibitions, setExhibitions} = useContext(MainContext)
-  const{events, setEvents} = useContext(MainContext)
+  const{exhibitions, events} = useContext(MainContext)
 
   return (
     <main>

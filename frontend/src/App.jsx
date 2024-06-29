@@ -20,6 +20,10 @@ const App = () => {
   const buttonRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [sort, setSort] = useState(null)
+  const [search, setSearch] = useState('')
+  const [searchQuery, setSearchQuery] = useState('');
+  const [dropdownVisible, setIsDropdownVisible] = useState(false);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -155,9 +159,39 @@ const App = () => {
 
   const shuffleArray = (array) => {
     return array.sort(() => Math.random() - 0.5)
-}
+  }
 
-  const contextData = { exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop, getDetailPath, cartItems, setCartItems, addToCart, isDropdownVisible, setDropdownVisible, dropdownRef, buttonRef, toggleDropdown, closeDropdown, handleClickOutside, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, handleClickShowPassword, handleClickShowConfirmPassword, increaseCart, decreaseCart, removeFromCart, shopCartItems, setShopCartItems, addToShopCart, increaseShopCart, decreaseShopCart, removeFromShopCart, shuffleArray }
+  const handleSortChange = (event) => {
+    const value = event.target.value;
+    if (value === "low-to-high") {
+      setSort({ field: 'price', asc: true });
+    } else if (value === "high-to-low") {
+      setSort({ field: 'price', asc: false });
+    } else if (value === "a-z") {
+      setSort({ field: 'title', asc: true });
+    } else if (value === "z-a") {
+      setSort({ field: 'title', asc: false });
+    } else {
+      setSort(null);
+    }
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setIsDropdownVisible(e.target.value !== '');
+  };
+
+  const filteredItems =
+    exhibitions.filter((exhibition) =>
+      exhibition.title.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+      .concat(
+        events.filter((event) =>
+          event.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+
+  const contextData = { exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop, getDetailPath, cartItems, setCartItems, addToCart, isDropdownVisible, setDropdownVisible, dropdownRef, buttonRef, toggleDropdown, closeDropdown, handleClickOutside, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, handleClickShowPassword, handleClickShowConfirmPassword, increaseCart, decreaseCart, removeFromCart, shopCartItems, setShopCartItems, addToShopCart, increaseShopCart, decreaseShopCart, removeFromShopCart, shuffleArray, sort, setSort, handleSortChange, search, setSearch, searchQuery, setSearchQuery, handleSearchChange, dropdownVisible, setIsDropdownVisible, filteredItems }
 
   return (
     <>

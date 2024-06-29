@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './CatCards.css';
 import { Link } from 'react-router-dom';
 import Delivery from '../../ShopComponents/DeliveryInfo/Delivery';
 import ShopCart from '../../ShopComponents/ShopCartLink/ShopCartLink';
+import MainContext from '../../../../context/context';
 
 const CatCards = ({ filteredProducts }) => {
+
+  const { handleSortChange, search, setSearch } = useContext(MainContext)
+
   return (
     <div className="catCards">
       <div className="custom-container shopCart__cont">
@@ -25,9 +29,12 @@ const CatCards = ({ filteredProducts }) => {
         <div className="row catCards__row">
           <div className="col-8">
             <div className="row">
-              <div className="col-12 catCards__col12">
+              <div className="col-6 catCards__col__left">
+                <input type="text" placeholder='Search' value={search} onChange={(e) => { setSearch(e.target.value) }}/>
+              </div>
+              <div className="col-6 catCards__col__right">
                 <p>Sort By</p>
-                <select name="sort" id="sort">
+                <select name="sort" id="sort" onChange={handleSortChange}>
                   <option value="default">Default</option>
                   <option value="a-z">Name: A-Z</option>
                   <option value="z-a">Name: Z-A</option>

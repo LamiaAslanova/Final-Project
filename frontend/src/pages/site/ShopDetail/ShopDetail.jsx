@@ -82,28 +82,33 @@ const ShopDetail = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <Tabs>
-                                    <TabList>
-                                        <Tab>About</Tab>
-                                        <Tab>Product Information</Tab>
-                                    </TabList>
-
-                                    <TabPanel>
-                                        <p>{item.about}</p>
-                                    </TabPanel>
-                                    <TabPanel>
-                                        <div className="row tabpanel__row">
-                                            <div className="col-6 tabpanel__col">
-                                                <span>WEIGHT:</span>
-                                                <p>{item.weight}</p>
-                                            </div>
-                                            <div className="col-6 tabpanel__col">
-                                                <span>DIMENSIONS:</span>
-                                                <p>{item.dimensions}</p>
+                                <div className="tabs">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">About</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Product Information</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                            <p>{item.about}</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                            <div className="row tabpane__row">
+                                                <div className="col-6 tabpane__col">
+                                                    <span>WEIGHT:</span>
+                                                    <p>{item.weight}</p>
+                                                </div>
+                                                <div className="col-6 tabpane__col">
+                                                    <span>DIMENSIONS:</span>
+                                                    <p>{item.dimensions}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </TabPanel>
-                                </Tabs>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-3 det__right">
                                 <div className="det__content">
