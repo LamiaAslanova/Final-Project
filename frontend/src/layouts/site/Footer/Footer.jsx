@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer>
       <div className="custom-container footer__top__cont">
@@ -25,7 +33,7 @@ const Footer = () => {
               <input type="text" />
               <button>Sign up</button>
             </form>
-            <Link>Back to the top <i class="fa-solid fa-circle-chevron-up"></i></Link>
+            <button className='scrollTo' onClick={scrollToTop}>Back to the top<i class="fa-solid fa-circle-chevron-up"></i></button>
           </div>
         </div>
       </div>

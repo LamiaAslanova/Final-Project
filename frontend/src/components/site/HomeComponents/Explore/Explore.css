@@ -115,7 +115,7 @@
         }
 
         .slick-next {
-            right: 10px;
+            right: 6px;
         }
 
         .slick-next::before {
@@ -247,7 +247,7 @@
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 451px) {
     .explore {
 
         .slider-container {
@@ -257,16 +257,28 @@
             }
 
             .slick-prev {
-                left: -3px;
+                left: 1px;
+            }
+            
+            .slick-next{
+                right: 14px;
             }
         }
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
     .explore {
 
         .slider-container {
+
+            .slick-arrow::before {
+                font-size: 20px;
+            }
+
+            .slick-next{
+                right: 0;
+            }
 
             .slick-list {
 

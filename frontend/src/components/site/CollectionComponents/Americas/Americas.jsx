@@ -3,9 +3,6 @@ import './Americas.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import Photo1 from '../../../../assets/images/americas.jpg'
-import { Link } from 'react-router-dom'
-import legion from '../../../../assets/images/Legion.jpg'
 
 const Americas = ({ items }) => {
     var settings = {
@@ -67,7 +64,6 @@ const Americas = ({ items }) => {
                                 )
                             })
                         }
-                        <p>1/10</p>
                     </div>
                 </div>
             </div>

@@ -100,13 +100,20 @@ footer {
                     }
                 }
 
-                a {
-                    text-align: right;
+                .scrollTo {
                     font-size: 18px;
                     font-weight: 400;
                     line-height: 28px;
                     color: white;
                     margin-top: 20px;
+                    background: none;
+                    border: none;
+                    width: auto;
+                    margin-left: auto;
+
+                    i{
+                        margin-left: 10px;
+                    }
                 }
             }
         }

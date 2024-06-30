@@ -30,13 +30,7 @@ const Header = () => {
                                     <li className='headerTop__li'>
                                         <Link className='' to='basket'>
                                             <i class="fa-solid fa-cart-shopping"></i>
-                                            <p>Cart ({cartItems.length})</p>
-                                        </Link>
-                                    </li>
-                                    <li className='headerTop__li'>
-                                        <Link>
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            <p>Search</p>
+                                            <p>Cart ({user.id ? cartItems.length : "0"})</p>
                                         </Link>
                                     </li>
                                     <li className='profile' ref={dropdownRef}>
@@ -54,20 +48,20 @@ const Header = () => {
                                                         <button onClick={() => {
                                                             Swal.fire({
                                                                 title: "Are you sure?",
-                                                                text: "You won't be able to revert this!",
+                                                                text: "You're about to sign out",
                                                                 icon: "warning",
                                                                 showCancelButton: true,
                                                                 confirmButtonColor: "#3085d6",
                                                                 cancelButtonColor: "#d33",
-                                                                confirmButtonText: "Yes, delete it!"
-                                                            }).then(async (result) => {
+                                                                confirmButtonText: "Yes, sign out!"
+                                                            }).then((result) => {
                                                                 if (result.isConfirmed) {
-                                                                    await dispatch(signOut());
+                                                                    dispatch(signOut());
                                                                     Cookies.remove('token');
                                                                     closeDropdown;
                                                                     Swal.fire({
-                                                                        title: "Deleted!",
-                                                                        text: "Your file has been deleted.",
+                                                                        title: "Has been signed out!",
+                                                                        text: "You're signed out.",
                                                                         icon: "success"
                                                                     });
                                                                 }
@@ -99,7 +93,7 @@ const Header = () => {
                             <div className="header__right__bottom">
                                 <nav>
                                     <ul>
-                                        <li><Link>Visit</Link></li>
+                                        <li><Link to='visit'>Visit</Link></li>
                                         <li><Link to='exhibitions-events'>Exhibitions and events</Link></li>
                                         <li><Link to='collection'>Collection</Link></li>
                                         <li><Link className='rightmost' to='shop'>Shop</Link></li>

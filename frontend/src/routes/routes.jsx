@@ -25,6 +25,7 @@ import SignUpPage from "../pages/site/SignUpPage/SignUpPage";
 import SiteRoot from "../pages/site/SiteRoot";
 import User from "../pages/site/User/User";
 import ShopBasket from "../pages/site/ShopBasket/ShopBasket";
+import Visit from "../pages/site/Visit/Visit";
 
 const ROUTES = [
     {
@@ -94,6 +95,10 @@ const ROUTES = [
             {
                 path: "shop-cart",
                 element: <ShopBasket/>
+            },
+            {
+                path: "visit",
+                element: <Visit/>
             }
         ]
     },

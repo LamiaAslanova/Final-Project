@@ -26,7 +26,7 @@ const ShopInfos = () => {
               return (
                 <tr>
                   <th scope="row">{shop__item._id}</th>
-                  <td><img src={shop__item.image} alt="" /></td>
+                  <td><img width="100px" src={shop__item.image} alt="" /></td>
                   <td>{shop__item.title}</td>
                   <td>{shop__item.category}</td>
                   <td>£{shop__item.price}</td>

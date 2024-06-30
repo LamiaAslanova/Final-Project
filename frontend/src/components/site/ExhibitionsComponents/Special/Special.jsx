@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import './Special.css'
 import Card from './Card'
 import { Link } from 'react-router-dom'
-import MainContext from '../../../../context/context'
 
 const Special = ({exhibitions}) => {
 

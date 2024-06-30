@@ -4,7 +4,6 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ShopDetail.css';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Delivery from '../../../components/site/ShopComponents/DeliveryInfo/Delivery';
 import { useParams } from 'react-router';
@@ -17,13 +16,8 @@ const ShopDetail = () => {
     useEffect(() => {
         $(document).ready(function () {
             $('.slider').slick({
-                dots: true,
                 prevArrow: '<a class="slick-prev" href="#"><i data-icon="ei-arrow-left" data-size="m"></i></a>',
-                nextArrow: '<a class="slick-next" href="#"><i data-icon="ei-arrow-right" data-size="m"></i></a>',
-                customPaging: function (slick, index) {
-                    var targetImage = slick.$slides.eq(index).find('img').attr('src');
-                    return '<img src="' + targetImage + '"/>';
-                }
+                nextArrow: '<a class="slick-next" href="#"><i data-icon="ei-arrow-right" data-size="m"></i></a>'
             });
         });
     }, []);
@@ -31,6 +25,14 @@ const ShopDetail = () => {
     const [item, setItem] = useState({})
     const { id } = useParams()
     const { addToShopCart } = useContext(MainContext)
+    const [quantity, setQuantity] = useState(1);
+
+    const increaseQuantity = () => setQuantity(prevQuantity => prevQuantity + 1);
+    const decreaseQuantity = () => setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+
+    const handleAddToBasket = () => {
+        addToShopCart({ ...item, quantity });
+    };
 
     useEffect(() => {
         axios.get(`http://localhost:8080/shop/${id}`)
@@ -118,12 +120,12 @@ const ShopDetail = () => {
                                             <p>Quantity</p>
                                         </div>
                                         <div className="quantity__func">
-                                            <button><i class="fa-solid fa-caret-left"></i></button>
-                                            <p>1</p>
-                                            <button><i class="fa-solid fa-caret-right"></i></button>
+                                            <button onClick={decreaseQuantity}><i class="fa-solid fa-caret-left"></i></button>
+                                            <p>{quantity}</p>
+                                            <button onClick={increaseQuantity}><i class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
-                                    <button onClick={() => { addToShopCart(item) }} className='addtobasket__button'>Add to basket</button>
+                                    <button onClick={handleAddToBasket} className='addtobasket__button'>Add to basket</button>
                                     <div class="accordion" id="accordionExample">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">

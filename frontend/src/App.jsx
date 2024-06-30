@@ -106,14 +106,18 @@ const App = () => {
   }
 
   const addToShopCart = (item) => {
-    const target = shopCartItems.find(x => x.item._id === item._id)
-    if (!target) {
+    const target = shopCartItems.find(x => x.item._id === item._id);
+    if (target) {
+      target.count += item.quantity;
+      target.totalPrice += item.price * item.quantity;
+      setShopCartItems([...shopCartItems]);
+    } else {
       let newShopCartItem = {
         item: item,
-        count: 1,
-        totalPrice: item.price
-      }
-      setShopCartItems([...shopCartItems, newShopCartItem])
+        count: item.quantity,
+        totalPrice: item.price * item.quantity
+      };
+      setShopCartItems([...shopCartItems, newShopCartItem]);
     }
   }
 

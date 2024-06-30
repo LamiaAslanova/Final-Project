@@ -12,7 +12,7 @@ a {
     font-family: 'Helvetica Neue';
 }
 
-.container-fluid{
+.container-fluid {
     padding: 0;
 }
 
@@ -21,33 +21,13 @@ a {
     margin: 0 auto;
 }
 
-/* .row{
-    justify-content: space-between;
+:root::-webkit-scrollbar {
+    width: 8px;
+    background-color: black;
 }
 
-.col-6{
-    width: 49%;
-}
-
-.col-4{
-    width: 32%;
-}
-
-.col-3{
-    width: 23.5%;
-} */
-
-/* @media (max-width: 576px){}
-
-@media (max-width: 768px){}
-
-
-@media (max-width: 1200px){}
-
-@media (max-width: 1400px){} */
-
-@media (max-width: 992px){
-    .col-6{
-        width: 49.7%;
-    }
+:root::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #373737;
+    transition: opacity 0.2s ease-in-out;
 }

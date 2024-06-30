@@ -8,10 +8,6 @@ import User from "../../../Classes/User";
 import userValidation from "../../../Validations/user.validation";
 import controller from "../../../Services/api/requests";
 import { endpoints } from "../../../Services/api/constants";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { useDispatch, useSelector } from "react-redux";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -80,7 +76,7 @@ const SignUpPage = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "User signed up successfully",
+          title: "User signed up successfully!",
           showConfirmButton: false,
           timer: 1000
         }).then(() => {
@@ -113,7 +109,7 @@ const SignUpPage = () => {
       </div>
       <div className="custom-container signUpPage__cont">
         <div className="row signUpPage__row">
-          <div className="col-6 signUpPage__col" style={{margin: "0 auto"}}>
+          <div className="col-6 signUpPage__col">
             <form
               onSubmit={formik.handleSubmit}
             >
@@ -124,11 +120,11 @@ const SignUpPage = () => {
                 name="firstName"
                 label="First name"
                 type="text"
-                variant="outlined"
+                variant="filled"
                 required
               />
               {formik.touched.firstName && formik.errors.firstName && (
-                <span style={{color: "red"}}>{formik.errors.firstName}</span>
+                <span style={{ color: "red" }}>{formik.errors.firstName}</span>
               )}
               <TextField
                 value={formik.values.lastName}
@@ -137,11 +133,11 @@ const SignUpPage = () => {
                 name="lastName"
                 label="Last name"
                 type="text"
-                variant="outlined"
+                variant="filled"
                 required
               />
               {formik.touched.lastName && formik.errors.lastName && (
-                <span style={{color: "red"}}>{formik.errors.lastName}</span>
+                <span style={{ color: "red" }}>{formik.errors.lastName}</span>
               )}
               {/* <TextField
           value={formik.values.userName}
@@ -163,11 +159,11 @@ const SignUpPage = () => {
                 name="email"
                 label="Email"
                 type="email"
-                variant="outlined"
+                variant="filled"
                 required
               />
               {formik.touched.email && formik.errors.email && (
-                <span style={{color: "red"}}>{formik.errors.email}</span>
+                <span style={{ color: "red" }}>{formik.errors.email}</span>
               )}
               <TextField
                 value={formik.values.password}
@@ -176,7 +172,7 @@ const SignUpPage = () => {
                 name="password"
                 label="Password"
                 type={showPassword ? "text" : "password"}
-                variant="outlined"
+                variant="filled"
                 required
                 InputProps={{
                   endAdornment: (
@@ -193,7 +189,7 @@ const SignUpPage = () => {
                 }}
               />
               {formik.touched.password && formik.errors.password && (
-                <span style={{color: "red"}}>{formik.errors.password}</span>
+                <span style={{ color: "red" }}>{formik.errors.password}</span>
               )}
               <TextField
                 value={formik.values.confirm__password}
@@ -202,7 +198,7 @@ const SignUpPage = () => {
                 name="confirm__password"
                 label="Confirm password"
                 type={showConfirmPassword ? "text" : "password"}
-                variant="outlined"
+                variant="filled"
                 required
                 InputProps={{
                   endAdornment: (
@@ -220,11 +216,11 @@ const SignUpPage = () => {
               />
               {formik.touched.confirm__password &&
                 formik.errors.confirm__password && (
-                  <span style={{color: "red"}}>
+                  <span style={{ color: "red" }}>
                     {formik.errors.confirm__password}
                   </span>
                 )}
-              <TextField
+              <TextField style={{backgroundColor:"#f0f0f0"}}
                 onChange={(event) => {
                   handleImageChange(event, formik.setFieldValue)
                 }}
@@ -235,7 +231,7 @@ const SignUpPage = () => {
                 required
               />
               {formik.touched.src && formik.errors.src && (
-                <span style={{color: "red"}}>{formik.errors.src}</span>
+                <span style={{ color: "red" }}>{formik.errors.src}</span>
               )}
               {/* <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Role</InputLabel>
@@ -251,8 +247,10 @@ const SignUpPage = () => {
             <MenuItem value={"client"}>Client</MenuItem>
           </Select>
         </FormControl> */}
-              <Link to={"/sign-in"}>Do you have an account?</Link>
-              <Button className="signUp__submit" type="submit" variant="contained" color="primary">Submit</Button>
+              <div className="signUp__end">
+                <Link to={"/sign-in"}>Do you have an account?</Link>
+                <Button className="signUp__submit" type="submit" variant="contained" color="primary">Sign Up</Button>
+              </div>
             </form>
           </div>
         </div>

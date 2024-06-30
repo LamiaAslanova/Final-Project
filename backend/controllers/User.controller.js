@@ -73,7 +73,7 @@ const userController = {
       // message = 'username already exists';
       // }
       if (dublicateEmail.length > 0) {
-        message = 'email already exists';
+        message = 'Email already exists!';
       }
       if (message.length > 0) {
         res.send({
@@ -120,7 +120,7 @@ const userController = {
           if (user.isVerified == true) {
             const token = generateAccessToken(user)
             res.send({
-              message: "signed in successfully",
+              message: "Signed in successfully!",
               auth: true,
               user: user,
               token: token
@@ -128,14 +128,14 @@ const userController = {
           }
           else {
             res.send({
-              message: "verify your email",
+              message: "Verify your email!",
               auth: false
             })
           }
         }
         else {
           res.send({
-            message: "email or password is incorrect",
+            message: "Email or password is incorrect!",
             auth: false
           })
         }
@@ -145,7 +145,7 @@ const userController = {
     }
     else {
       res.send({
-        message: "no such user",
+        message: "No such user",
         auth: false
       })
     }
@@ -163,7 +163,7 @@ const userController = {
       }
       else {
         res.send({
-          message: 'no such user'
+          message: 'No such user'
         })
       }
     }

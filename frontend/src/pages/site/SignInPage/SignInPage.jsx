@@ -13,6 +13,8 @@ import MainContext from "../../../context/context";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Cookies from 'js-cookie'
+import './SignInPage.css'
+
 const SignInPage = () => {
   const navigate = useNavigate('');
   const user = useSelector((state) => state.user)
@@ -41,7 +43,7 @@ const SignInPage = () => {
         actions.resetForm();
         dispatch(signIn(response.user))
         const token = response.token
-        Cookies.set('token', token, {expires: 1})
+        Cookies.set('token', token, { expires: 1 })
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -66,63 +68,71 @@ const SignInPage = () => {
   });
 
   return (
-    <div style={{ width: "35%", margin: "50px auto", paddingTop: "100px" }}>
-      <form
-        onSubmit={formik.handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          width: "100%",
-        }}
-      >
+    <div className="signInPage">
+      <div className="custom-container signInPage__title__cont">
+        <div className="row signInPage__title__row">
+          <div className="col-6 signInPage__title__col">
+            <img src="https://emails.britishmuseum.org/files/cmi_dev/project_3562/logos/logo_black.png" alt="" />
+            <h4>Please enter your details to sign in to your account.</h4>
+            <span>* denotes required fields</span>
+          </div>
+        </div>
+      </div>
+      <div className="custom-container signInPage__cont">
+        <div className="row signInPage__row">
+          <div className="col-6 signInPage__col">
+            <form
+              onSubmit={formik.handleSubmit}>
 
 
-        <TextField
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          name="email"
-          label="Email"
-          type="email"
-          variant="outlined"
-          required
-        />
-        {formik.touched.email && formik.errors.email && (
-          <span style={{ color: "red" }}>{formik.errors.email}</span>
-        )}
-        <TextField
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          name="password"
-          label="Password"
-          type={showPassword ? "text" : "password"}
-          variant="outlined"
-          required
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  edge="end"
-                >
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-        {formik.touched.password && formik.errors.password && (
-          <span style={{ color: "red" }}>{formik.errors.password}</span>
-        )}
+              <TextField
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="email"
+                label="Email"
+                type="email"
+                variant="filled"
+                required
+              />
+              {formik.touched.email && formik.errors.email && (
+                <span style={{ color: "red" }}>{formik.errors.email}</span>
+              )}
+              <TextField
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                name="password"
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                variant="filled"
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              {formik.touched.password && formik.errors.password && (
+                <span style={{ color: "red" }}>{formik.errors.password}</span>
+              )}
 
-        <Link to={"/sign-up"}>Don't you have an account?</Link>
-        <Button type="submit" variant="contained" color="primary">
-          Sign Up
-        </Button>
-      </form>
+              <div className="signIn__end">
+                <Link to={"/sign-up"}>Don't you have an account?</Link>
+                <Button className="signIn__submit" type="submit" variant="contained" color="primary">Sign In</Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

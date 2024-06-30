@@ -11,7 +11,6 @@ const ShopCategory = () => {
     const { category } = useParams();
 
     const filteredProducts = shop.filter(item => item.category === category);
-    console.log(filteredProducts)
 
     return (
         <main>
