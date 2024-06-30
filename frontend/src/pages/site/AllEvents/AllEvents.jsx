@@ -3,13 +3,17 @@ import './AllEvents.css'
 import Card from './Card'
 import MainContext from '../../../context/context'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AllEvents = () => {
 
-    const {events, shuffleArray} = useContext(MainContext)
+    const { events, shuffleArray } = useContext(MainContext)
 
-  return (
-    <div className="allEv">
+    return (
+        <div className="allEv">
+            <Helmet>
+                <title>All events | British Museum</title>
+            </Helmet>
             <div className="custom-container allEv__cont">
                 <div className="row allEv__title__row">
                     <div className="col-12 allEv__title__col">
@@ -38,7 +42,7 @@ const AllEvents = () => {
                 <div className="row allEv__cards">
                     {
                         shuffleArray(events).map((event, index) => {
-                            return(
+                            return (
                                 <Card key={index} event={event} />
                             )
                         })
@@ -46,7 +50,7 @@ const AllEvents = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default AllEvents

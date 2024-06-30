@@ -24,7 +24,7 @@ const Footer = () => {
               <a target='_blank' href='https://www.instagram.com/britishmuseum/'><i class="fa-brands fa-instagram"></i></a>
               <a target='_blank' href='https://www.youtube.com/user/britishmuseum'><i class="fa-brands fa-youtube"></i></a>
               <a target='_blank' href='https://weibo.com/britishmuseumlondon'><i class="fa-brands fa-weibo"></i></a>
-              <a target='_blank' href='#'><i class="fa-brands fa-weixin"></i></a>
+              <a target='_blank' href='https://www.wechat.com/mobile'><i class="fa-brands fa-weixin"></i></a>
             </div>
           </div>
           <div className="col-6 footer__top__right">

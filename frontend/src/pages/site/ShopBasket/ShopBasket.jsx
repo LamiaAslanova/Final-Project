@@ -3,6 +3,7 @@ import './ShopBasket.css'
 import Table from '../../../components/site/ShopBasketComponents/Table'
 import MainContext from '../../../context/context'
 import { useNavigate } from 'react-router'
+import { Helmet } from 'react-helmet'
 
 const ShopBasket = () => {
 
@@ -18,6 +19,9 @@ const ShopBasket = () => {
 
   return (
     <div className="shopBasket">
+      <Helmet>
+        <title>Shop - Cart | British Museum</title>
+      </Helmet>
       <div className="custom-container shopBasket__title__cont">
         <div className="row shopBasket__title__row">
           <div className="col-10 shopBasket__title__col">

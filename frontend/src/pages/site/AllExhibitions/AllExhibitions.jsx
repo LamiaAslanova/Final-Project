@@ -3,6 +3,7 @@ import './AllExhibitions.css'
 import Card from './Card'
 import MainContext from '../../../context/context'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const AllExhibitions = () => {
 
@@ -10,6 +11,9 @@ const AllExhibitions = () => {
 
     return (
         <div className="allEx">
+            <Helmet>
+                <title>All exhibitions | British Museum</title>
+            </Helmet>
             <div className="custom-container allEx__cont">
                 <div className="row allEx__title__row">
                     <div className="col-12 allEx__title__col">

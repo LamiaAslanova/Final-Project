@@ -2,10 +2,14 @@ import React from 'react'
 import './FreeExHero.css'
 import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
+import { Helmet } from 'react-helmet';
 
 const FreeExHero = ({ item }) => {
   return (
     <div className="freeExHero" style={{ backgroundImage: `url(${item.image})` }}>
+      <Helmet>
+        <title>{`${item.title} | British Museum`}</title>
+      </Helmet>
       <div className="freeExHero__main">
         <div className="custom-container freeExHero__cont">
           <div className="row freeExHero__row">
@@ -36,8 +40,8 @@ const FreeExHero = ({ item }) => {
               <div className="freeExHero__mini__right">
                 <p>Share the page</p>
                 <ul>
-                  <li><RouterLink><i class="fa-brands fa-facebook-f"></i></RouterLink></li>
-                  <li><RouterLink><i class="fa-brands fa-x-twitter"></i></RouterLink></li>
+                  <li><a target='_blank' href='https://www.facebook.com/britishmuseum'><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a target='_blank' href='https://x.com/britishmuseum'><i class="fa-brands fa-x-twitter"></i></a></li>
                 </ul>
               </div>
             </div>

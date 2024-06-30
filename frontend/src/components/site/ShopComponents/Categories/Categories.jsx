@@ -13,6 +13,7 @@ import games from "../../../../assets/images/games.jpg";
 import cats from "../../../../assets/images/cats.jpg";
 import peter from "../../../../assets/images/peter.jpg";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Categories = () => {
     const categories = [
@@ -32,6 +33,9 @@ const Categories = () => {
 
     return (
         <div className="categories">
+            <Helmet>
+                <title>Shop | British Museum</title>
+            </Helmet>
             <div className="custom-container categories__cont">
                 <div className="row categories__row">
                     <div className="col-10">

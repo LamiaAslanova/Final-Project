@@ -3,7 +3,7 @@ import './Map.css'
 
 const Map = () => {
     return (
-        <div className="map">
+        <div id="map">
             <div className="custom-container map__cont">
                 <div className="row map__title">
                     <div className="col-12 map__title__col">

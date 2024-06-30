@@ -11,7 +11,7 @@ const VisitHero = () => {
                     <div className="row visitHero__main__row">
                         <div className="col-12 visitHero__main__col">
                             <h1>Plan your visit</h1>
-                            <RouterLink>
+                            <RouterLink to='/basket'>
                                 <span>Book now</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                             </RouterLink>
@@ -30,8 +30,8 @@ const VisitHero = () => {
                                 <div className="visitHero__mini__right">
                                     <p>Share the page</p>
                                     <ul>
-                                        <li><RouterLink><i class="fa-brands fa-facebook-f"></i></RouterLink></li>
-                                        <li><RouterLink><i class="fa-brands fa-x-twitter"></i></RouterLink></li>
+                                        <li><a target='_blank' href='https://www.facebook.com/britishmuseum'><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a target='_blank' href='https://x.com/britishmuseum'><i class="fa-brands fa-x-twitter"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

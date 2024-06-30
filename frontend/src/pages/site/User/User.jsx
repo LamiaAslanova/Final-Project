@@ -7,6 +7,7 @@ import { endpoints } from '../../../Services/api/constants'
 import Swal from 'sweetalert2'
 import './User.css'
 import { signOut } from '../../../Services/redux/Slices/userSlice'
+import { Helmet } from 'react-helmet'
 
 const User = () => {
   const navigate = useNavigate()
@@ -32,6 +33,9 @@ const User = () => {
 
   return (
     <div className='user'>
+      <Helmet>
+        <title>{`${user.userName} | British Museum`}</title>
+      </Helmet>
       <div className="custom-container user__title__cont">
         <div className="row user__title__row">
           <div className="col-12 user__title__col">

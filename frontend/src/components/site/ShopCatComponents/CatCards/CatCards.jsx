@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Delivery from '../../ShopComponents/DeliveryInfo/Delivery';
 import ShopCart from '../../ShopComponents/ShopCartLink/ShopCartLink';
 import MainContext from '../../../../context/context';
+import { Helmet } from 'react-helmet';
 
 const CatCards = ({ filteredProducts }) => {
 
@@ -30,7 +31,7 @@ const CatCards = ({ filteredProducts }) => {
           <div className="col-8">
             <div className="row">
               <div className="col-6 catCards__col__left">
-                <input type="text" placeholder='Search' value={search} onChange={(e) => { setSearch(e.target.value) }}/>
+                <input type="text" placeholder='Search' value={search} onChange={(e) => { setSearch(e.target.value) }} />
               </div>
               <div className="col-6 catCards__col__right">
                 <p>Sort By</p>
@@ -48,6 +49,9 @@ const CatCards = ({ filteredProducts }) => {
                 filteredProducts.map((product, index) => {
                   return (
                     <div key={index} className="col-4 catCards__col4">
+                      <Helmet>
+                        <title>{`${product.category} | British Museum`}</title>
+                      </Helmet>
                       <div className="card single__card">
                         <Link to={`/shop-details/${product._id}`} className="card__top">
                           <img src={product.image} />

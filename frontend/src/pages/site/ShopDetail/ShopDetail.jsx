@@ -11,6 +11,7 @@ import axios from 'axios';
 import ShopCart from '../../../components/site/ShopComponents/ShopCartLink/ShopCartLink';
 import MainContext from '../../../context/context';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const ShopDetail = () => {
     useEffect(() => {
@@ -43,6 +44,9 @@ const ShopDetail = () => {
 
     return (
         <div className="shopdet">
+            <Helmet>
+                <title>{`${item.title} | British Museum`}</title>
+            </Helmet>
             <div className="custom-container shopCart__cont">
                 <div className="row shopCart__row">
                     <div className="col-10 shopCart__col">
@@ -95,13 +99,13 @@ const ShopDetail = () => {
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <p>{item.about}</p>
+                                            <p style={{ whiteSpace: 'pre-wrap' }}>{item.about}</p>
                                         </div>
                                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                             <div className="row tabpane__row">
                                                 <div className="col-6 tabpane__col">
                                                     <span>WEIGHT:</span>
-                                                    <p>{item.weight}</p>
+                                                    <p>{item.weight}kq</p>
                                                 </div>
                                                 <div className="col-6 tabpane__col">
                                                     <span>DIMENSIONS:</span>

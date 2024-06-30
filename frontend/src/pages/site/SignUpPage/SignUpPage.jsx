@@ -13,6 +13,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import MainContext from "../../../context/context";
 import './SignUpPage.css'
+import { Helmet } from "react-helmet";
 
 const SignUpPage = () => {
   const navigate = useNavigate('');
@@ -96,6 +97,9 @@ const SignUpPage = () => {
 
   return (
     <div className="signUpPage">
+      <Helmet>
+        <title>Sign up | British Museum</title>
+      </Helmet>
       <div className="custom-container signUpPage__title__cont">
         <div className="row signUpPage__title__row">
           <div className="col-6 signUpPage__title__col">
@@ -220,7 +224,7 @@ const SignUpPage = () => {
                     {formik.errors.confirm__password}
                   </span>
                 )}
-              <TextField style={{backgroundColor:"#f0f0f0"}}
+              <TextField style={{ backgroundColor: "#f0f0f0" }}
                 onChange={(event) => {
                   handleImageChange(event, formik.setFieldValue)
                 }}

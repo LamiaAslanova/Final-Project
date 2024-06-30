@@ -1,6 +1,7 @@
 import React from 'react'
 import './Body.css'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const VisitBody = () => {
     return (
@@ -15,10 +16,10 @@ const VisitBody = () => {
                         <p>Exhibition tickets are available to book for:</p>
                         <ul>
                             <li>
-                                <Link>Michelangelo: the last decades</Link><span>(until 28 July 2024)</span>
+                                <RouterLink>Michelangelo: the last decades</RouterLink><span>(until 28 July 2024)</span>
                             </li>
                             <li>
-                                <Link>Silk Roads</Link><span>(26 September 2024 - 23 February 2025)</span>
+                                <RouterLink>Silk Roads</RouterLink><span>(26 September 2024 - 23 February 2025)</span>
                             </li>
                         </ul>
                         <p>
@@ -51,14 +52,14 @@ const VisitBody = () => {
                             </div>
                             <div className="piece__bottom">
                                 <p>Great Russell Street, London, WC1B 3DG</p>
-                                <p>See <a href='https://www.britishmuseum.org/sites/default/files/2024-01/British-Museum-map-January-2024.pdf' target="_blank">getting here</a></p>
+                                <p>See <ScrollLink to='map' smooth={true} duration={500}>getting here</ScrollLink></p>
                             </div>
                         </div>
                         <div className="visitBody__col4__button">
-                            <Link to='/exhibitions-events'>
+                            <RouterLink to='/exhibitions-events'>
                                 <span>Book tickets</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>
-                            </Link>
+                            </RouterLink>
                             <a href='https://www.britishmuseum.org/sites/default/files/2024-01/British-Museum-map-January-2024.pdf' target='_blank'>
                                 <span>View Museum map</span>
                                 <i class="fa-solid fa-circle-chevron-right"></i>

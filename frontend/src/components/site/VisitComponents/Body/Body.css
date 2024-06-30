@@ -109,6 +109,7 @@
                             line-height: 28px;
                             color: black;
                             position: relative;
+                            cursor: pointer;
                         }
 
                         a::before {

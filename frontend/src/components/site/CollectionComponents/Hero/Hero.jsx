@@ -26,8 +26,8 @@ const Hero = () => {
                             <div className="hero__mini__right">
                                 <p>Share the page</p>
                                 <ul>
-                                    <li><Link><i class="fa-brands fa-facebook-f"></i></Link></li>
-                                    <li><Link><i class="fa-brands fa-x-twitter"></i></Link></li>
+                                    <li><a target='_blank' href='https://www.facebook.com/britishmuseum'><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a target='_blank' href='https://x.com/britishmuseum'><i class="fa-brands fa-x-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>

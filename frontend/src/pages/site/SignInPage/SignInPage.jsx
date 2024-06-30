@@ -14,6 +14,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Cookies from 'js-cookie'
 import './SignInPage.css'
+import { Helmet } from "react-helmet";
 
 const SignInPage = () => {
   const navigate = useNavigate('');
@@ -69,6 +70,9 @@ const SignInPage = () => {
 
   return (
     <div className="signInPage">
+      <Helmet>
+        <title>Sign in | British Museum</title>
+      </Helmet>
       <div className="custom-container signInPage__title__cont">
         <div className="row signInPage__title__row">
           <div className="col-6 signInPage__title__col">

@@ -4,6 +4,7 @@ import Hero from '../../../components/site/CollectionComponents/Hero/Hero'
 import Description from '../../../components/site/CollectionComponents/Description/Description'
 import Americas from '../../../components/site/CollectionComponents/Americas/Americas'
 import MainContext from '../../../context/context'
+import { Helmet } from 'react-helmet'
 
 const Collection = () => {
 
@@ -18,6 +19,9 @@ const Collection = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Collection | British Museum</title>
+      </Helmet>
       <Hero />
       <Description />
       <Americas items={americas} />
