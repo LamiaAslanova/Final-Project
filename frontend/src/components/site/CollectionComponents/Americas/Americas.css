@@ -4,10 +4,13 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    padding: 60px 0 90px;
     position: relative;
-
+    padding-bottom: 110px;
+    
     .americas__cont {
+        padding: 60px 0 0;
+        border-top: 1px solid #4a4a4a;
+
         .americas__title {
             .americas__title__col {
                 margin-bottom: 22px;
@@ -36,6 +39,9 @@
                     height: 530px;
 
                     img{
+                        width: 100%;
+                        height: 100%;
+                        object-position: top;
                         object-fit: cover;
                         margin: auto;
                         margin-bottom: 18px;
@@ -52,21 +58,32 @@
         }
 
         .slick-prev {
-            left: -20px;
+            left: -35px;
             z-index: 10;
         }
 
+        .slick-prev::before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f137";
+            font-weight: 900;
+        }
+
         .slick-next {
-            right: 10px;
+            right: -10px;
+        }
+
+        .slick-next::before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f138";
+            font-weight: 900;
         }
 
         .slick-arrow::before {
-            font-size: 50px;
-            color: white;
+            font-size: 48px;
         }
 
         ul {
-            bottom: -40px;
+            bottom: -60px;
 
             li {
                 margin: 0;
@@ -80,7 +97,7 @@
     }
 }
 
-.americas::before{
+/* .americas::before{
     content: '';
     position: absolute;
     bottom: 0;
@@ -89,4 +106,4 @@
     height: 1px;
     background-color: #4a4a4a;
     transform: translateX(-50%);
-}
+} */

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './Free.css'
 import Card from './Card'
-import MainContext from '../../../../context/context'
 
 const Free = ({exhibitions}) => {
 

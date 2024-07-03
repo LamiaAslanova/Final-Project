@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './Guided.css'
 import Card from './Card'
-import MainContext from '../../../../context/context'
 
 const Guided = ({ events }) => {
 

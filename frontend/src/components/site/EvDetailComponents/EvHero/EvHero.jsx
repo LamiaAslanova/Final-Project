@@ -33,7 +33,7 @@ const EvHero = ({ item }) => {
               <div className="evHero__mini__left">
                 <RouterLink to='/'>Home</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
-                <RouterLink to='exhibitions'>Exhibitions and events</RouterLink>
+                <RouterLink to='/exhibitions-events'>Exhibitions and events</RouterLink>
                 <i class="fa-solid fa-chevron-right"></i>
                 <p>{item.title}</p>
               </div>

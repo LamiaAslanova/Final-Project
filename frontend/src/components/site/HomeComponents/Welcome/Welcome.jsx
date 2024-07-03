@@ -3,13 +3,12 @@ import './Welcome.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import Photo1 from '../../../../assets/images/Photo5-1.jpg'
 import { Link } from 'react-router-dom'
 import MainContext from '../../../../context/context'
 
 const Welcome = ({ shop }) => {
 
-    const {shuffleArray} = useContext(MainContext)
+    const { shuffleArray } = useContext(MainContext)
 
     var settings = {
         dots: true,
@@ -70,7 +69,7 @@ const Welcome = ({ shop }) => {
             <div className="slider-container">
                 <Slider {...settings}>
                     {
-                        shuffleArray(shop).map((product, index) => {
+                        shuffleArray(shop).slice(0, 7).map((product, index) => {
                             return (
                                 <div key={index} className='single__item'>
                                     <img src={product.image} alt="" />

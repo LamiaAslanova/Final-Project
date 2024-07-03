@@ -8,7 +8,7 @@ router.get("/users",authenticateToken, userController.getAll);
 router.get("/users/:id",authenticateToken, userController.getOne);
 router.patch("/users/:id",authenticateToken, userController.update);
 router.delete("/users/:id",authenticateToken, userController.delete);
-router.post("/users", upload.single("src"),authenticateToken, userController.post);
+router.post("/users", upload.single("src"), userController.post);
 router.post("/login", userController.login);
 router.get("/verify/:token", userController.verify);
 

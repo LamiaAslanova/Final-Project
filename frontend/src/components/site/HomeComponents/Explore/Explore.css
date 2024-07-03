@@ -90,13 +90,13 @@
 
                     img {
                         position: absolute;
-                        bottom: -20px;
+                        bottom: -22px;
                         left: 50%;
                         transform: translateX(-50%);
                         display: block;
                         margin: 0 auto;
-                        width: 286px;
-                        height: auto;
+                        /* width: 100%; */
+                        /* height: auto; */
                         z-index: 100;
                     }
                 }
@@ -278,19 +278,6 @@
 
             .slick-next{
                 right: 0;
-            }
-
-            .slick-list {
-
-                .slick-slide {
-
-                    .single__item {
-
-                        img {
-                            width: 260px;
-                        }
-                    }
-                }
             }
         }
     }

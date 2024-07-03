@@ -58,7 +58,7 @@ const CatCards = ({ filteredProducts }) => {
                         </Link>
                         <div className="card-body card__bottom">
                           <Link to={`/shop-details/${product._id}`}>{product.title}</Link>
-                          <p>${product.price}</p>
+                          <p>£{product.price}</p>
                         </div>
                       </div>
                     </div>

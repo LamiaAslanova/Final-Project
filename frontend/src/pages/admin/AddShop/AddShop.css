@@ -1,7 +1,7 @@
 .add__sh{
     width: calc(100% - 300px);
     margin-left: auto;
-    height: 95vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

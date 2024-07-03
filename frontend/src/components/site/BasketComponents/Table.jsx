@@ -11,48 +11,54 @@ const Table = ({ cartItems }) => {
       <div className="custom-container basket__cont">
         <div className="row basket__row">
           <div className="col-12 basket__col">
-            <table class="table">
-              <tbody>
-                {
-                  cartItems.map((cartItem, index) => {
-                    sum += cartItem.totalPrice
-                    return (
-                      <tr key={index}>
-                        <td>
-                          <div className="tableitem">
-                            <h3>{cartItem.item.title}</h3>
-                            <div className="tableitem__bottom">
-                              <img src={cartItem.item.image} alt="" />
-                              <div className="tableitem__bottom__right">
-                                <p>{cartItem.item.date}</p>
-                                <p>{cartItem.item.time}</p>
-                                <div className="count__div">
-                                  <p>{cartItem.count} Ticket(s)</p>
-                                  <p>£{cartItem.item.price}</p>
+            {
+              cartItems && cartItems.length > 0 ? (
+                <table class="table">
+                  <tbody>
+                    {
+                      cartItems.map((cartItem, index) => {
+                        sum += cartItem.totalPrice
+                        return (
+                          <tr key={index}>
+                            <td>
+                              <div className="tableitem">
+                                <h3>{cartItem.item.title}</h3>
+                                <div className="tableitem__bottom">
+                                  <img src={cartItem.item.image} alt="" />
+                                  <div className="tableitem__bottom__right">
+                                    <p>{cartItem.item.date}</p>
+                                    <p>{cartItem.item.time}</p>
+                                    <div className="count__div">
+                                      <p>{cartItem.count} Ticket(s)</p>
+                                      <p>£{cartItem.item.price}</p>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="quantity">
-                            <button onClick={() => { decreaseCart(cartItem.item) }}><i class="fa-solid fa-caret-left"></i></button>
-                            <p>{cartItem.count}</p>
-                            <button onClick={() => { increaseCart(cartItem.item) }}><i class="fa-solid fa-caret-right"></i></button>
-                          </div>
-                        </td>
-                        <td>
-                          <div className="totalprice">
-                            <p>£{cartItem.totalPrice}</p>
-                            <button onClick={() => { removeFromCart(cartItem.item) }}><i class="fa-solid fa-xmark"></i></button>
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  })
-                }
-              </tbody>
-            </table>
+                            </td>
+                            <td>
+                              <div className="quantity">
+                                <button onClick={() => { decreaseCart(cartItem.item) }}><i class="fa-solid fa-caret-left"></i></button>
+                                <p>{cartItem.count}</p>
+                                <button onClick={() => { increaseCart(cartItem.item) }}><i class="fa-solid fa-caret-right"></i></button>
+                              </div>
+                            </td>
+                            <td>
+                              <div className="totalprice">
+                                <p>£{cartItem.totalPrice}</p>
+                                <button onClick={() => { removeFromCart(cartItem.item) }}><i class="fa-solid fa-xmark"></i></button>
+                              </div>
+                            </td>
+                          </tr>
+                        )
+                      })
+                    }
+                  </tbody>
+                </table>
+              ) : (
+                <h1 style={{ fontSize: "20px", fontWeight: "400", lineHeight: "23.6px", color: "#333333", marginBottom: "40px" }}>Your cart is empty...</h1>
+              )
+            }
           </div>
         </div>
       </div>

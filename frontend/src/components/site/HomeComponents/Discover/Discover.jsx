@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Discover.css'
 import { Link } from 'react-router-dom'
 import Cards from './Cards'
-import MainContext from '../../../../context/context'
 
 const Discover = ({exhibitions}) => {
 

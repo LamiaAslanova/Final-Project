@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from '../../../../assets/images/Hockney.jpg'
 import { Link } from 'react-router-dom'
 
 const Card = ({event}) => {

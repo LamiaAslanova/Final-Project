@@ -26,117 +26,123 @@ import SiteRoot from "../pages/site/SiteRoot";
 import User from "../pages/site/User/User";
 import ShopBasket from "../pages/site/ShopBasket/ShopBasket";
 import Visit from "../pages/site/Visit/Visit";
+import ScrollToHead from "../components/site/ScrollToHead";
+import Error from "../pages/site/Error/Error";
 
 const ROUTES = [
     {
         path: "/",
-        element: <SiteRoot/>,
+        element: <ScrollToHead><SiteRoot /></ScrollToHead>,
         children: [
             {
                 path: "",
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: "exhibitions-events",
-                element: <Exhibitions/>
+                element: <Exhibitions />
             },
             {
                 path: "shop",
-                element: <Shop/>
+                element: <Shop />
             },
             {
                 path: "exhibition-details/:id",
-                element: <ExhibitionDetail/>
+                element: <ExhibitionDetail />
             },
             {
                 path: "free-exhibition-details/:id",
-                element: <FreeExhibitionDetail/>
+                element: <FreeExhibitionDetail />
             },
             {
                 path: "event-details/:id",
-                element: <EventDetail/>
+                element: <EventDetail />
             },
             {
                 path: "shop-category/:category",
-                element: <ShopCategory/>
+                element: <ShopCategory />
             },
             {
                 path: "collection",
-                element: <Collection/>
+                element: <Collection />
             },
             {
                 path: "basket",
-                element: <Basket/>
+                element: <Basket />
             },
             {
                 path: "shop-details/:id",
-                element: <ShopDetail/>
+                element: <ShopDetail />
             },
             {
                 path: "all-exhibitions",
-                element: <AllExhibitions/>
+                element: <AllExhibitions />
             },
             {
                 path: "all-events",
-                element: <AllEvents/>
+                element: <AllEvents />
             },
             {
                 path: "sign-up",
-                element: <SignUpPage/>
+                element: <SignUpPage />
             },
             {
                 path: "sign-in",
-                element: <SignInPage/>
+                element: <SignInPage />
             },
             {
                 path: "user",
-                element: <User/>
+                element: <User />
             },
             {
                 path: "shop-cart",
-                element: <ShopBasket/>
+                element: <ShopBasket />
             },
             {
                 path: "visit",
-                element: <Visit/>
+                element: <Visit />
+            },
+            {
+                path: "*",
+                element: <Error />
             }
         ]
     },
     {
         path: "/admin",
-        element: <AdminRoot/>,
+        element: <AdminRoot />,
         children: [
             {
                 path: "add-exhibition",
-                element: <AddExhibition/>
+                element: <AddExhibition />
             },
             {
                 path: "add-event",
-                element: <AddEvent/>
+                element: <AddEvent />
             },
             {
                 path: "add-collection",
-                element: <AddCollection/>
+                element: <AddCollection />
             },
             {
                 path: "add-shop",
-                element: <AddShop/>
+                element: <AddShop />
             },
             {
                 path: "exhibitions-infos",
-                element: <ExhibitionsInfos/>
+                element: <ExhibitionsInfos />
             },
             {
                 path: "events-infos",
-                element: <EventsInfos/>
+                element: <EventsInfos />
             },
             {
                 path: "collection-infos",
-                element: <CollectionInfos/>
+                element: <CollectionInfos />
             },
             {
                 path: "shop-infos",
-                element: <ShopInfos/>
+                element: <ShopInfos />
             }
         ]
     }

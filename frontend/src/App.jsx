@@ -24,6 +24,8 @@ const App = () => {
   const [search, setSearch] = useState('')
   const [searchQuery, setSearchQuery] = useState('');
   const [dropdownVisible, setIsDropdownVisible] = useState(false);
+  const [dropdownHeight, setDropdownHeight] = useState(0)
+  const searchContainerRef = useRef(null)
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -36,9 +38,11 @@ const App = () => {
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
+
   const closeDropdown = () => {
     setDropdownVisible(false);
   };
+
   const handleClickOutside = (event) => {
     if (
       dropdownRef.current &&
@@ -49,6 +53,7 @@ const App = () => {
       setDropdownVisible(false);
     }
   };
+
   useEffect(() => {
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -195,7 +200,40 @@ const App = () => {
         )
       );
 
-  const contextData = { exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop, getDetailPath, cartItems, setCartItems, addToCart, isDropdownVisible, setDropdownVisible, dropdownRef, buttonRef, toggleDropdown, closeDropdown, handleClickOutside, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, handleClickShowPassword, handleClickShowConfirmPassword, increaseCart, decreaseCart, removeFromCart, shopCartItems, setShopCartItems, addToShopCart, increaseShopCart, decreaseShopCart, removeFromShopCart, shuffleArray, sort, setSort, handleSortChange, search, setSearch, searchQuery, setSearchQuery, handleSearchChange, dropdownVisible, setIsDropdownVisible, filteredItems }
+  const clearSearch = () => {
+    handleSearchChange({ target: { value: '' } });
+  }
+
+  const detailPathSearch = (category, id) => {
+    return category === 'Special' ? `/exhibition-details/${id}` : (category === 'Free' ? `/free-exhibition-details/${id}` : `/event-details/${id}`)
+  }
+
+  const clickOutsideClear = (event) => {
+    if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+      handleSearchChange({ target: { value: '' } })
+    }
+  }
+
+  useEffect(() => {
+
+    document.addEventListener('mousedown', clickOutsideClear)
+    return () => {
+      document.removeEventListener('mousedown', clickOutsideClear)
+    }
+  }, [handleSearchChange])
+
+  useEffect(() => {
+    if (dropdownVisible) {
+      const dropdown = document.querySelector('.search-dropdown')
+      if (dropdown) {
+        setDropdownHeight(dropdown.offsetHeight)
+      }
+    } else {
+      setDropdownHeight(0)
+    }
+  }, [dropdownVisible, filteredItems])
+
+  const contextData = { exhibitions, setExhibitions, events, setEvents, collections, setCollections, shop, setShop, getDetailPath, cartItems, setCartItems, addToCart, isDropdownVisible, setDropdownVisible, dropdownRef, buttonRef, toggleDropdown, closeDropdown, handleClickOutside, showPassword, setShowPassword, showConfirmPassword, setShowConfirmPassword, handleClickShowPassword, handleClickShowConfirmPassword, increaseCart, decreaseCart, removeFromCart, shopCartItems, setShopCartItems, addToShopCart, increaseShopCart, decreaseShopCart, removeFromShopCart, shuffleArray, sort, setSort, handleSortChange, search, setSearch, searchQuery, setSearchQuery, handleSearchChange, dropdownVisible, setIsDropdownVisible, filteredItems, clearSearch, detailPathSearch, dropdownHeight, setDropdownHeight, searchContainerRef, clickOutsideClear }
 
   return (
     <>

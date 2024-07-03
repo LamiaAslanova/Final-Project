@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Image from '../../../../assets/images/Hockney.jpg'
 import {Link} from 'react-router-dom'
 import MainContext from '../../../../context/context'
 

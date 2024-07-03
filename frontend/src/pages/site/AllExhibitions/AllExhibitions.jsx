@@ -1,13 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './AllExhibitions.css'
 import Card from './Card'
 import MainContext from '../../../context/context'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import HeadingMain from '../../../components/site/ExhibitionsComponents/Heading/HeadingMain'
 
 const AllExhibitions = () => {
 
-    const { exhibitions, shuffleArray } = useContext(MainContext)
+    const { exhibitions, dropdownHeight} = useContext(MainContext)
 
     return (
         <div className="allEx">
@@ -15,13 +16,10 @@ const AllExhibitions = () => {
                 <title>All exhibitions | British Museum</title>
             </Helmet>
             <div className="custom-container allEx__cont">
-                <div className="row allEx__title__row">
+                <div className="row allEx__title__row" style={{ marginBottom: `${dropdownHeight}px` }}>
                     <div className="col-12 allEx__title__col">
                         <h1>Exhibitions</h1>
-                        <div className="search">
-                            <input type="text" placeholder='What are you looking for?' />
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
+                        <HeadingMain/>
                     </div>
                 </div>
             </div>
@@ -41,7 +39,7 @@ const AllExhibitions = () => {
             <div className="custom-container allEx__cards__cont">
                 <div className="row allEx__cards">
                     {
-                        shuffleArray(exhibitions).map((exhibition, index) => {
+                        exhibitions.map((exhibition, index) => {
                             return (
                                 <Card key={index} exhibition={exhibition} />
                             )

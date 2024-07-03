@@ -64,7 +64,7 @@ const ShopDetail = () => {
             <div className="custom-container shopdet__heading__cont">
                 <div className="row shopdet__heading__row">
                     <div className="col-10 shopdet__path">
-                        <Link to='/shop'>Home</Link>
+                        <Link to='/shop'>Shop</Link>
                         <span>/</span>
                         <p>{item.title}</p>
                     </div>
@@ -118,7 +118,7 @@ const ShopDetail = () => {
                             </div>
                             <div className="col-3 det__right">
                                 <div className="det__content">
-                                    <h2>${item.price}</h2>
+                                    <h2>£{item.price}</h2>
                                     <div className="quantity">
                                         <div className="quantity__title">
                                             <p>Quantity</p>

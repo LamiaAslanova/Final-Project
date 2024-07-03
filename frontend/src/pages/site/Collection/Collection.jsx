@@ -10,12 +10,14 @@ const Collection = () => {
 
   const { collections, setCollections } = useContext(MainContext)
 
-  const americas = collections.filter(item => item.category === 'Americas')
-  const animals = collections.filter(item => item.category === 'Animals')
-  const china = collections.filter(item => item.category === 'China')
-  const death = collections.filter(item => item.category === 'Death and memory')
-  const africa = collections.filter(item => item.category === 'Africa')
-  const egypt = collections.filter(item => item.category === 'Egypt')
+  const objects = collections.slice(6)
+
+  const americas = objects.filter(item => item.category === 'Americas')
+  const animals = objects.filter(item => item.category === 'Animals')
+  const china = objects.filter(item => item.category === 'China')
+  const death = objects.filter(item => item.category === 'Death and memory')
+  const africa = objects.filter(item => item.category === 'Africa')
+  const egypt = objects.filter(item => item.category === 'Egypt')
 
   return (
     <main>

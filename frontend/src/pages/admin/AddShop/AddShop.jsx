@@ -59,6 +59,15 @@ const AddShop = () => {
                                     value={values.title}
                                 />
                                 <input
+                                    type="file"
+                                    name="image"
+                                    placeholder='Image'
+                                    onChange={(event) => {
+                                        setFieldValue("image", event.currentTarget.files[0]);
+                                    }}
+                                    onBlur={handleBlur}
+                                />
+                                <input
                                     type="text"
                                     name="additionalImage"
                                     placeholder='Additional Image'
@@ -75,6 +84,19 @@ const AddShop = () => {
                                     value={values.category}
                                 />
                                 <input
+                                    type="number"
+                                    name="price"
+                                    placeholder='Price'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.date}
+                                />
+                                <button type="submit" disabled={isSubmitting}>
+                                    Submit
+                                </button>
+                            </div>
+                            <div className="col-6 form4__right">
+                                <input
                                     type='text'
                                     name="dimensions"
                                     placeholder='Dimensions'
@@ -90,34 +112,12 @@ const AddShop = () => {
                                     onBlur={handleBlur}
                                     value={values.weight}
                                 />
-                                <button type="submit" disabled={isSubmitting}>
-                                    Submit
-                                </button>
-                            </div>
-                            <div className="col-6 form4__right">
-                                <input
-                                    type="file"
-                                    name="image"
-                                    placeholder='Image'
-                                    onChange={(event) => {
-                                        setFieldValue("image", event.currentTarget.files[0]);
-                                    }}
-                                    onBlur={handleBlur}
-                                />
                                 <textarea
                                     name="about"
                                     placeholder='About'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.about}
-                                />
-                                <input
-                                    type="number"
-                                    name="price"
-                                    placeholder='Price'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.date}
                                 />
                             </div>
                         </form>
